@@ -1,3 +1,21 @@
 # CyberArk-DAP-EKS-Lap-2021
 
 ## Perparation Tasks
+
+### Create World DB
+Login Docker (If you don't have Docker Hub account, please signup in https://hub.docker.com
+sudo docker login
+
+
+Create a MySQL container as our database server
+sudo docker pull mysql
+mkdir db && cd db
+wget https://downloads.mysql.com/docs/world.sql.gz
+gunzip world.sql 
+cd ..
+docker run --name mysqldb -v /home/ec2-user/db:/docker-entrypoint-initdb.d \
+     -e MYSQL_ROOT_PASSWORD=Cyberark1 \
+     -e MYSQL_DATABASE=world \
+     -e MYSQL_USER=cityapp \
+     -e MYSQL_PASSWORD=Cyberark1 \
+     -p "3306:3306" -d mysql:latest 
