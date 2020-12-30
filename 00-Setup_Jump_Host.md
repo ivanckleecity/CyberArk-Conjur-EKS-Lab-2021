@@ -8,4 +8,4 @@
    ![](https://github.com/ivanckleecity/CyberArk-DAP-EKS-Lap-2021/blob/main/images/00-vpc-setup01.PNG)
 3. Launch EC2 Instances
 3.1 Select "Amazon Linux 2 AMI"
-    ![]()
+    ![](https://github.com/ivanckleecity/CyberArk-DAP-EKS-Lap-2021/blob/main/images/00-01-Amazon_Linux_2_AMI.PNG)
