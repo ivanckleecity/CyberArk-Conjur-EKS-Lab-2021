@@ -30,3 +30,5 @@ The application will connect to a MySQL database to retreive data, and during au
 3. Onboard MySQL Account to CorePAS
 4. Setup DAP Master
 5. Configure Vault Synchronizer
+
+### [Setup DataBase Server](01-Setup_DataBase_Server.md)
