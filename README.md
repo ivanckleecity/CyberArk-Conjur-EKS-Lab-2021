@@ -28,7 +28,7 @@ The application will connect to a MySQL database to retreive data, and during au
  - CyberArk CorePAS installed on VMWare workstation, `CGD-2020-0101-GA` prefered 
  - Sufficient disk space for additional 2 virtual machines (5.6GB for compressed VM and/or 24GB for extracted VM)
 
-### [Preparation: Environment Setup](00-setup.md)
+### [Setup Jump Host](00-Setup_Jump_Host.md)
 1. Setup CyberArk CorePAS based on CGD
 2. Setup 2 Extra VM (DAP Master & OKD)
 3. Onboard MySQL Account to CorePAS
