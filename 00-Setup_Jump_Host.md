@@ -6,3 +6,6 @@
 1. Login to your AWS Console
 2. Create VPC (Give a VPC name tag and assign IPv4 CIDR block, all others setting can be default)
    ![](https://github.com/ivanckleecity/CyberArk-DAP-EKS-Lap-2021/blob/main/images/00-vpc-setup01.PNG)
+3. Launch EC2 Instances
+3.1 Select "Amazon Linux 2 AMI"
+    ![]()
