@@ -17,16 +17,12 @@ The application will connect to a MySQL database to retreive data, and during au
 
 ![Architecture](https://github.com/QuincyChengAtWork/DAP-OpenShift-Lab-2020/raw/master/images/architecture.png)
 
-
 ## Technical Procedure
 
 ### Prerequisite
- - Access to Smartfile
- - FTP client
- - 7zip or Winzip installed on your workstation
- - VMware Workstation 12 or greater installed on your workstation
- - CyberArk CorePAS installed on VMWare workstation, `CGD-2020-0101-GA` prefered 
- - Sufficient disk space for additional 2 virtual machines (5.6GB for compressed VM and/or 24GB for extracted VM)
+ - Understand basic Linux installation and administration
+ - Unkerstand basic Kubernetes setup and administration
+ - Understand basic AWS administration
 
 ### [Setup Jump Host](00-Setup_Jump_Host.md)
 1. Setup CyberArk CorePAS based on CGD
