@@ -2,6 +2,12 @@
 
 ## Perparation Tasks
 
+### Setup AWS EKS Envirunment
+
+#### Install Jump Host. (For testing setup, we will setup jump host, CyberArk DAP Master and Testing MySQL DB in this Jump Host)
+
+
+
 ### Create World DB
 Login Docker (If you don't have Docker Hub account, please signup in https://hub.docker.com
 sudo docker login
