@@ -1,29 +1,36 @@
-# CyberArk-DAP-EKS-Lap-2021
+# CyberArk DAP AWS EKS Integration Lab 2021
+This is a tutorial on how to secure secrets of AWS EKS applications by CyberArk Dynamic Access Provider (DAP).   
+We will cover deploying DAY Master, DAP follower instances by follower seed fetcher.
+Secretless Broker & inital container will also be covered in this tutorial.
 
-## Perparation Tasks
+Extra tech challenges will be included in each sections for quick learners.
 
-### Setup AWS EKS Envirunment
+## Overview
 
-#### Install Jump Host. (For testing setup, we will setup jump host, CyberArk DAP Master and Testing MySQL DB in this Jump Host)
+[OKD](https://www.okd.io) is used as the OpenShift platform to host the [demo app](https://github.com/jeepapichet/cityapp)
+The application will connect to a MySQL database to retreive data, and during authenication, [secrets](https://docs.cyberark.com/Product-Doc/OnlineHelp/AAM-DAP/Latest/en/Content/Get%20Started/key_concepts/secrets.html) will be used by the application.
 
-
-
-### Create World DB
-Login Docker (If you don't have Docker Hub account, please signup in https://hub.docker.com
-sudo docker login
+[Dynamic Access Provider (DAP)](https://docs.cyberark.com/Product-Doc/OnlineHelp/AAM-DAP/Latest/en/Content/Get%20Started/WhatIsConjur.html) is used in this tutorial to secure & manage the secrets.   
 
 
-Create a MySQL container as our database server
-sudo docker pull mysql
+## Architecture
 
-```bash
-mkdir db && cd db
-wget https://downloads.mysql.com/docs/world.sql.gz
-gunzip world.sql 
-cd ..
-docker run --name mysqldb -v /home/ec2-user/db:/docker-entrypoint-initdb.d \
-     -e MYSQL_ROOT_PASSWORD=Cyberark1 \
-     -e MYSQL_DATABASE=world \
-     -e MYSQL_USER=cityapp \
-     -e MYSQL_PASSWORD=Cyberark1 \
-     -p "3306:3306" -d mysql:5.7.29
+![Architecture](https://github.com/QuincyChengAtWork/DAP-OpenShift-Lab-2020/raw/master/images/architecture.png)
+
+
+## Technical Procedure
+
+### Prerequisite
+ - Access to Smartfile
+ - FTP client
+ - 7zip or Winzip installed on your workstation
+ - VMware Workstation 12 or greater installed on your workstation
+ - CyberArk CorePAS installed on VMWare workstation, `CGD-2020-0101-GA` prefered 
+ - Sufficient disk space for additional 2 virtual machines (5.6GB for compressed VM and/or 24GB for extracted VM)
+
+### [Preparation: Environment Setup](00-setup.md)
+1. Setup CyberArk CorePAS based on CGD
+2. Setup 2 Extra VM (DAP Master & OKD)
+3. Onboard MySQL Account to CorePAS
+4. Setup DAP Master
+5. Configure Vault Synchronizer
