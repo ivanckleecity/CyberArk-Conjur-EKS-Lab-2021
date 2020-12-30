@@ -24,11 +24,11 @@ The application will connect to a MySQL database to retreive data, and during au
  - Unkerstand basic Kubernetes setup and administration
  - Understand basic AWS administration
 
-### [Setup Jump Host](00-Setup_Jump_Host.md)
+### [Task 1, Setup Jump Host](00-Setup_Jump_Host.md)
 1. Setup CyberArk CorePAS based on CGD
 2. Setup 2 Extra VM (DAP Master & OKD)
 3. Onboard MySQL Account to CorePAS
 4. Setup DAP Master
 5. Configure Vault Synchronizer
 
-### [Setup DataBase Server](01-Setup_DataBase_Server.md)
+### [Task 2, Setup DataBase Server](01-Setup_DataBase_Server.md)
