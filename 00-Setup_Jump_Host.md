@@ -1,7 +1,7 @@
-# Perparation Tasks
+# Setup AWS EKS Envirunment
 
-## Setup AWS EKS Envirunment
-## Install Jump Host. (For testing setup, we will setup jump host, CyberArk DAP Master and Testing MySQL DB in this Jump Host)
+## Install Jump Host.
+For testing purposes, we will setup a jump host, CyberArk DAP Master and Testing MySQL DB in this Jump Host)
 
 
 
