@@ -20,13 +20,17 @@ The application will connect to a MySQL database to retreive data, and during au
 ## Technical Procedure
 
 ### Prerequisite
- - Understand basic Linux installation and administration
- - Unkerstand basic Kubernetes setup and administration
- - Understand basic AWS administration
+- Understand basic Linux installation and administration
+- Unkerstand basic Kubernetes setup and administration
+- Understand basic AWS administration
 
 ### [Task 1: Setup Jump Host](00-Setup_Jump_Host.md)
 
-### [Task 2: Install Necessary Software]
+### [Task 2: Install Necessary Software](01-Install_Necessary_Software.md)
+- git
+- jq
+- homebrew
+- eksctl
+- aws-iam-authenticator
 
-
-### [Task 3: Setup DataBase Server](01-Setup_DataBase_Server.md)
+### [Task 3: Setup DataBase Server](02-Setup_DataBase_Server.md)
