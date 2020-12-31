@@ -2,11 +2,11 @@
 - add something
 
 ### 1.0. Create IAM User for manage EKS Cluster
-- Create a IAM user with necessary permission for it to creaet and manage EKS cluster
+- Create a IAM user with necessary permission for it to create and manage EKS cluster
 - That IAM user need Programmatic access
 - Create access key for this user and Please keep the Access Key safely
 
-### 1.1. Create AWS Credential in the JumpHost
+### 1.1. Create AWS Credential file in the JumpHost
 ```bash
 vi the ~/.aws/credential
 ```
