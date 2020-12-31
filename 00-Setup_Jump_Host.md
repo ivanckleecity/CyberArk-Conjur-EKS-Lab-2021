@@ -23,6 +23,10 @@
 ![](https://github.com/ivanckleecity/CyberArk-DAP-EKS-Lap-2021/blob/main/images/00-03-EC2_Linux_Setup06.PNG)
 ![](https://github.com/ivanckleecity/CyberArk-DAP-EKS-Lap-2021/blob/main/images/00-03-EC2_Linux_Setup07.PNG)
 
+2.4. Edit Route Tables
+- Add default gateway to the Intenet Gatewaywhere you create in step 2.3                                              
+![](https://github.com/ivanckleecity/CyberArk-DAP-EKS-Lap-2021/blob/main/images/00-03-EC2_Linux_Setup08.PNG)
+
 3.0. Setup EC2 Instances
 
 3.1. Select "Amazon Linux 2 AMI"
