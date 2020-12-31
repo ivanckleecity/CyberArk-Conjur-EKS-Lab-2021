@@ -10,7 +10,7 @@
 ```bash
 vi the ~/.aws/credential
 ```
-- Add the following content into the credential file
+- Add the following content into the credential file -
 [default]
 aws_access_key_id=<IAM User access key where you created in step 1.0>
 aws_secret_access_key=<IAM User secret access key where you created in step 1.0>
