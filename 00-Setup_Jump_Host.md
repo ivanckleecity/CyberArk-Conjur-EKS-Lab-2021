@@ -44,5 +44,11 @@
 ![](https://github.com/ivanckleecity/CyberArk-DAP-EKS-Lap-2021/blob/main/images/00-03-EC2_Linux_Setup02.PNG)
 ![](https://github.com/ivanckleecity/CyberArk-DAP-EKS-Lap-2021/blob/main/images/00-03-EC2_Linux_Setup03.PNG)
 
-3.3. Check if you can access your Linux JumpHost with the ssh key you created in step 3.2
+3.3. (Optional) Assign the Elastic IP address to you JumpHost Instance
+- Allocate Elastic IP Address to the JumpHost Instance ID where created in the step 3.2
+- Select your JumpHost Instance Private IP address                                                                           
+![](https://github.com/ivanckleecity/CyberArk-DAP-EKS-Lap-2021/blob/main/images/00-03-EC2_Linux_Setup04.PNG)
+![](https://github.com/ivanckleecity/CyberArk-DAP-EKS-Lap-2021/blob/main/images/00-03-EC2_Linux_Setup05.PNG)
+
+3.4. Check if you can access your Linux JumpHost with the ssh key you created in step 3.2
 ![](https://github.com/ivanckleecity/CyberArk-DAP-EKS-Lap-2021/blob/main/images/00-03-EC2_Linux_Setup09.PNG)                                                       
