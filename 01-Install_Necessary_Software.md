@@ -1,31 +1,30 @@
 # Objectives
-- A
-
-## Install Jump Host.
-# Objectives
-- Setup a Jump Host to access the EKS Envirunment
-- For testing purposes, we will reduce the number or EC2 Instances, So we will setup our CyberArk DAP Master and Testing MySQL DataBase Server in the same Jump Host
-
-## Install Jump Host.
-1.0. Login to your AWS Console
-
-2.1. Create VPC
-- Give a VPC name tag and assign IPv4 CIDR block, all others setting can be default
-     ![](https://github.com/ivanckleecity/CyberArk-DAP-EKS-Lap-2021/blob/main/images/00-01-vpc-setup01.PNG)
-
-2.2. Enable the DNS Hostname 
-     ![](https://github.com/ivanckleecity/CyberArk-DAP-EKS-Lap-2021/blob/main/images/00-01-vpc-setup03.PNG)
+- Please follow those steps to install all necessary software for your next labs
 
 1.0. Update you Linux JumpHost Software Package
-''sudo yum update
+```bash
+sudo yum update
+```
 
-
+2.0 Install git and jq
+```bash
 sudo yum install git -y
 sudo yum install jq
+```
+3.0. Install eksctl for creating and managing EKS clusters
+
+3.1. Install Homebrew
+```bash
 git clone https://github.com/Homebrew/brew ~/.linuxbrew/Homebrew
 mkdir ~/.linuxbrew/bin
 ln -s ../Homebrew/bin/brew ~/.linuxbrew/bin
 eval $(~/.linuxbrew/bin/brew shellenv)
 brew tap weaveworks/tap
+```
+3.2. Install eksctl
+```bash
 brew install weaveworks/tap/eksctl
 eksctl version
+```
+
+
