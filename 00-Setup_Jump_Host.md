@@ -16,7 +16,7 @@
 - Select the VPC where you created in step 2.1
 - Give a Subnet name tag and assign IPv4 CIDR block, all others setting can be default                                                                             
      ![](https://github.com/ivanckleecity/CyberArk-DAP-EKS-Lap-2021/blob/main/images/00-01-vpc-setup02.PNG)
-07
+
 2.3. Create Internet Gateway
 - Give a name to the Internet Gateway
 - Attach to your VPC where you created in step 2.1                                                              
