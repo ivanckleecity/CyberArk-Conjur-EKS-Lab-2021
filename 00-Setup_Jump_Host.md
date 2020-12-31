@@ -39,8 +39,10 @@
 - Network: Enable assign public IP
 - Storage: Assign 20G and gp2
 - Create your new SSH key pair for access this Jump Host OR you can reuse your existing SSH key pair
-- All others setting, you can use default vaule
-
+- All others setting, you can use default vaule                                                                        
 ![](https://github.com/ivanckleecity/CyberArk-DAP-EKS-Lap-2021/blob/main/images/00-03-EC2_Linux_Setup01.PNG)
 ![](https://github.com/ivanckleecity/CyberArk-DAP-EKS-Lap-2021/blob/main/images/00-03-EC2_Linux_Setup02.PNG)
 ![](https://github.com/ivanckleecity/CyberArk-DAP-EKS-Lap-2021/blob/main/images/00-03-EC2_Linux_Setup03.PNG)
+
+3.3. Check if you can access your Linux JumpHost with the ssh key you created in step 3.2
+![](https://github.com/ivanckleecity/CyberArk-DAP-EKS-Lap-2021/blob/main/images/00-03-EC2_Linux_Setup09.PNG)                                                       
