@@ -1,5 +1,5 @@
 # Objectives
-- <add something>
+- add something
 
 ### 1.0. Create IAM User manage the EKS Cluster
 - Create a IAM user with necessary permission for it to creaet and manage EKS cluster
