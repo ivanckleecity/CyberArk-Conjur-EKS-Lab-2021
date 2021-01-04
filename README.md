@@ -15,7 +15,7 @@ The application will connect to a MySQL database to retreive data, and during au
 
 ## Architecture
 
-![Architecture](https://github.com/QuincyChengAtWork/DAP-OpenShift-Lab-2020/raw/master/images/architecture.png)
+![Architecture](https://github.com/QuincyChengAtWork/DAP-OpenShift-Lab-2020/raw/master/images/architecture_eks.png)
 
 ## Technical Procedure
 
