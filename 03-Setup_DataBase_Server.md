@@ -20,7 +20,8 @@ sudo docker run --name mysqldb -v /home/ec2-user/db:/docker-entrypoint-initdb.d 
 ```
 
 Check if your World mysql contrainer running correctly
-```sudo docker ps
+```bash
+sudo docker ps
 ```
 Example output
 -
