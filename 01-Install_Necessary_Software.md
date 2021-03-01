@@ -33,3 +33,10 @@ sudo curl -o aws-iam-authenticator https://amazon-eks.s3.us-west-2.amazonaws.com
 suco chmod 755 ./aws-iam-authenticator
 ```
 
+4.0. Install Docker
+```
+cd ~
+sudo yum install -y docker
+sudo service docker start
+sudo usermod -a -G docker ec2-user
+```
