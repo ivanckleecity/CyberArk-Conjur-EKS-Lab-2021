@@ -7,6 +7,7 @@ Create a MySQL container as our database server
 sudo docker pull mysql
 
 ```bash
+cd ~
 mkdir db && cd db
 wget https://downloads.mysql.com/docs/world.sql.gz
 gunzip world.sql 
