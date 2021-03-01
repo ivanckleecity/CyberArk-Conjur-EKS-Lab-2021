@@ -8,21 +8,26 @@
 
 ### 1.1. Create AWS Credential file in the JumpHost
 ```bash
-vi the ~/.aws/credential
+aws configure
 ```
-- Add the following content into the credential file
+- Following the Answers
 ```bash
-[default]
-aws_access_key_id=<IAM User access key where you created in step 1.0>
-aws_secret_access_key=<IAM User secret access key where you created in step 1.0>
-```
-- Example
-```bash
-[default]
-aws_access_key_id=1234567890123
-aws_secret_access_key=tladkfnlsdwmefhskjdfjaerj21
-```
+AWS Access Key ID [None]: <Your Key ID>
+AWS Secret Access Key [None]: <Your Access Key>
+Default region name [None]: <Your AWS Region>
+Default output format [None]: <Just Click Enter>
 
+```
+- Check your AWS Credential
+```bash
+aws sts get-caller-identity
+```
+- Your should see the similar output
+{
+    "Account": "409556437035",
+    "UserId": "AIDAV6W3XJAVSP2IUKHIP",
+    "Arn": "arn:aws:iam::409556437035:user/ivanlee-admin"
+}
 
 1.0. Update you Linux JumpHost Software Package
 ```bash
