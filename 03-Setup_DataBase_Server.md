@@ -23,6 +23,6 @@ Check if your World mysql contrainer running correctly
 ```bash
 sudo docker ps
 ```
-Example output
--
-``` 76e3a316a7ee        mysql:5.7.29        "docker-entrypoint.s…"   9 seconds ago       Up 6 seconds        0.0.0.0:3306->3306/tcp, 33060/tcp   mysqldb ```
+- Example output
+
+``` 76e3a316a7ee        mysql:5.7.29        "docker-entrypoint.s…"   9 seconds ago       Up 6 seconds        0.0.0.0:3306->3306/tcp, 33060/tcp   mysqldb 
