@@ -1,5 +1,11 @@
 # Objectives
-- Please follow those steps to install all necessary software for your next labs
+Install all necessary software for your next labs
+git
+jq
+homebrew
+eksctl
+aws-iam-authenticator
+docker
 
 1.0. Update you Linux JumpHost Software Package
 ```bash
