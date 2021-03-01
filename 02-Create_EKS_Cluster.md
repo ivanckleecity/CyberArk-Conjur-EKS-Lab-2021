@@ -16,6 +16,13 @@ vi the ~/.aws/credential
 aws_access_key_id=<IAM User access key where you created in step 1.0>
 aws_secret_access_key=<IAM User secret access key where you created in step 1.0>
 ```
+- Example
+```bash
+[default]
+aws_access_key_id=1234567890123
+aws_secret_access_key=tladkfnlsdwmefhskjdfjaerj21
+```
+
 
 1.0. Update you Linux JumpHost Software Package
 ```bash
