@@ -26,5 +26,10 @@ brew tap weaveworks/tap
 brew install weaveworks/tap/eksctl
 eksctl version
 ```
-
+3.3 Install aws-iam-authenticator
+```
+cd /usr/local/bin/
+sudo curl -o aws-iam-authenticator https://amazon-eks.s3.us-west-2.amazonaws.com/1.18.9/2020-11-02/bin/linux/amd64/aws-iam-authenticator
+suco chmod 755 ./aws-iam-authenticator
+```
 
