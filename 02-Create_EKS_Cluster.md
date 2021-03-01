@@ -29,7 +29,9 @@ aws sts get-caller-identity
     "Arn": "arn:aws:iam::409556437035:user/ivanlee-admin"
 }
 
-1.0. Update you Linux JumpHost Software Package
+### 1.2. Create eks cluster
 ```bash
-sudo yum update
+eksctl create cluster  --name <your-customer-name>  --region <your-region>  --nodegroup-name <your-cluster-group-name>  --node-type t2.large --nodes 1
 ```
+- Example
+- eksctl create cluster  --name test-eks-01-ap-east-1  --region ap-east-1  --nodegroup-name test-eks-01-node-ap-east-1  --node-type t2.large --nodes 1
