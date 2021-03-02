@@ -92,7 +92,7 @@ We will deploy followers with seed-fetcher, which automatically authenticate and
 1. Copy conjur-authenticator-role.yaml and conjur-authenticator-role-binding.yaml to /home/ec2-user/conjur_policy
 2. Review conjur-authenticator-role.yaml and conjur-authenticator-role-binding.yaml
 4. Use kubectl to apply it.
-   '''bash
+   ```bash
    kubectl apply -f ./conjur-authenticator-role.yaml
    kubectl apply -f ./conjur-authenticator-role-binding.yaml
    ```
