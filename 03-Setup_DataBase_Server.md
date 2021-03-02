@@ -34,6 +34,7 @@ use world;
 show tables; 
 ```
 - Example output
+```bash
 mysql> show tables;
 +-----------------+
 | Tables_in_world |
@@ -42,5 +43,5 @@ mysql> show tables;
 | country         |
 | countrylanguage |
 +-----------------+
-
+```
 
