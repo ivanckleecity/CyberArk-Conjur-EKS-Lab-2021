@@ -25,7 +25,7 @@ The application will use hardcoded credential in the deployment configuration.
    ```
    ```
    Example
-   docker tag cityapp:1.0 123456789000.dkr.ecr.ap-southeast-1.amazonaws.com/ivanleecityapp:1.0
+   docker tag cityapp:1.0 123456789000.dkr.ecr.ap-southeast-1.amazonaws.com/ivanlee/cityapp:1.0
    docker push 123456789000.dkr.ecr.ap-southeast-1.amazonaws.com/ivanlee/cityapp:1.0
    ```
    
