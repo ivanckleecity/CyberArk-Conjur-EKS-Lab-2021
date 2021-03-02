@@ -31,3 +31,5 @@ The application will connect to a MySQL database to retreive data, and during au
 ### [Task 2: Create EKS Cluster](02-Create_EKS_Cluster.md)
 
 ### [Task 3: Setup DataBase Server](03-Setup_DataBase_Server.md)
+
+### [Task 4: Setup Conjur Master Server](03-Setup_Conjur_Master_Server.md)
