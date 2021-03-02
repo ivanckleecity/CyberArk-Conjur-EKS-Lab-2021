@@ -103,3 +103,12 @@ sudo docker run --name conjur-appliance -d --restart=always --security-opt secco
    conjur authn login -u admin
    conjur policy load root /root/conjur_policy/root.yaml
    ```
+   ```
+   You should see this output
+   Loaded policy 'root'
+   {
+       "created_roles": {
+       },
+       "version": 1
+    }
+    ```
