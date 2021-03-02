@@ -28,9 +28,8 @@ sudo docker ps
 
 Check if your World Database is running correctly
 ```bash sudo docker exec -it mysqldb bash 
+mysql -u cityapp -p 
+use world; 
+show tables; 
 ```
-
-```bash mysql -u cityapp -p ```
-```bash use world; ```
-```bash show tables; ```
 
