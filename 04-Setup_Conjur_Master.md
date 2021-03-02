@@ -36,42 +36,41 @@ sudo docker run --name conjur-appliance -d --restart=always --security-opt secco
 ```
 
 2. Signed Certificate
-    2.1. If you don't want to generate the Conjur Certificate 'dap-certificate.tgz', you can collect the our demo cert for this testing setup envirunment
-    2.1. If you want to generate your own Certificate, please follow this Conjur Cert generation guide. https://github.com/dataplex/dap-cert-generator
+    2.1 If you don't want to generate the Conjur Certificate 'dap-certificate.tgz', you can collect the our demo cert for this testing setup envirunment
+    2.1 If you want to generate your own Certificate, please follow this Conjur Cert generation guide. https://github.com/dataplex/dap-cert-generator
 
     ```bash
     sudo docker cp ./dap-certificate.tgz conjur-appliance:/tmp/dap-certificate.tgz
     ```
 
 3.	Let's configure the DAP master instance and import the cert
-```
-sudo docker exec -it conjur-appliance bash
+   ```
+   sudo docker exec -it conjur-appliance bash
+   evoke configure master --accept-eula -h master-dap.cyberarkdemo.com --master-altnames "master-dap.cyberarkdemo.com" -p <your design password> cyberark
+   cd /tmp
+   tar -zxvf dap-certificate.tgz
+   evoke ca import --root /tmp/dc1-ca.cer.pem
+   evoke ca import --key follower-dap.key.pem follower-dap.cer.pem
+   evoke ca import --key master-dap.key.pem --set master-dap.cer.pem
+   ```	
 
-evoke configure master --accept-eula -h master-dap.cyberarkdemo.com --master-altnames "master-dap.cyberarkdemo.com" -p <your design password> cyberark
-cd /tmp
-tar -zxvf dap-certificate.tgz
-evoke ca import --root /tmp/dc1-ca.cer.pem
-evoke ca import --key follower-dap.key.pem follower-dap.cer.pem
-evoke ca import --key master-dap.key.pem --set master-dap.cer.pem
-```	
-
-4. Clean up the cert file and exit back to `DAP-MASTER` VM
-```bash
-rm dap-certificate.tgz *.pem
-exit
-```
+4. Clean up the cert file and exit back to Jump Host Shell
+   ```bash
+   rm dap-certificate.tgz *.pem
+   exit
+   ```
 
 5. Setup conjur CLI and load initial policy
 
-```bash
-alias conjur='docker run --rm -it --network host -v $HOME:/root -it cyberark/conjur-cli:5'
-conjur init -u https://master-dap.cyberarkdemo.com
-```
-Key|Value
----|-----
-Trust this certificate|yes
-acccount name|cyberark
-```
+   ```bash
+   alias conjur='docker run --rm -it --network host -v $HOME:/root -it cyberark/conjur-cli:5'
+   conjur init -u https://master-dap.cyberarkdemo.com
+   ```
+   Key|Value
+   ---|-----
+   Trust this certificate|yes
+   acccount name|cyberark
+   ```
 conjur authn login -u admin
 conjur policy load root /root/policy/root.yaml
 ```
