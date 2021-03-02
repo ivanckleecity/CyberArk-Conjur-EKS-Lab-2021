@@ -31,6 +31,8 @@ The application will connect to a MySQL database to retreive data, and during au
 
 ### [Task 3: Setup DataBase Server](03-Setup_DataBase_Server.md)
 
+### [Task 4: Deploy App with Embedded Secret](04-Deploy_App_with_Embedded_Secret.md)
+
 ### [Task 5: Setup Conjur Master Server](05-Setup_Conjur_Master.md)
 
 ### [Task 6: Deploy Follower with Seed Fetcher](06-Deploy_Follower_with_Seed_Fetcher.md)
