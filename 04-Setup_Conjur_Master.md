@@ -69,6 +69,10 @@ sudo docker run --name conjur-appliance -d --restart=always --security-opt secco
    alias conjur='docker run --rm -it --network host -v $HOME:/root -it cyberark/conjur-cli:5'
    conjur init -u https://master-dap.cyberarkdemo.com
    ```
+   ```
+   You may add the alias to your .bash_profile, so you have conjur alias when you login next time
+   ```
+   
    Key|Value
    ---|-----
    Trust this certificate|yes
