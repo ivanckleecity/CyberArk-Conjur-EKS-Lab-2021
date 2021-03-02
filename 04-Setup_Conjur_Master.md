@@ -3,9 +3,9 @@ Install CyberArk Conjur Master
 
 ### 1.0. Collect the Conjur Installer and seed fectcher from your local CyberArk Sales Engineer Team
 1. conjur-appliance_xx.x.x.tar.gz
-2. dap-seedfetcher_x.x.x.tar.gz
+2. dap-seedfetcher_x.x.x.tar.gz (Remark: the xx.x.x is the Conjur version)
 3. Upload to your Jump Host
-4. Remark: the xx.x.x is the Conjur version
+4. conjur policy files (root.yaml)
    
 ### 1.1. Install Conjur Master
 
@@ -93,3 +93,10 @@ sudo docker run --name conjur-appliance -d --restart=always --security-opt secco
    
    ### Conjur Master UI
    ![Architecture](https://github.com/ivanckleecity/CyberArk-DAP-EKS-Lap-2021/blob/main/images/04-ConjurLandingPage.JPG)
+
+7. Load initial root policy to Conjur Master
+
+   ```
+   conjur authn login -u admin
+   conjur policy load root /root/policy/root.yaml
+   ```
