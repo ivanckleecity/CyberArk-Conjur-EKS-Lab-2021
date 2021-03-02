@@ -78,7 +78,7 @@ authn-k8s-cluster.yaml
    ```bash
    curl -k https://master-dap.cyberarkdemo.com/info
    ```
-3.1 You see this output
+4. You see this output
     ```
      "enabled": [
       "authn",
