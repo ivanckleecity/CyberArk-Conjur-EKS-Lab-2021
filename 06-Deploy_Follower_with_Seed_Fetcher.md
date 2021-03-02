@@ -58,6 +58,29 @@ authn-k8s-cluster.yaml
    ```
 4. Remark, If an error bash: conjur: command not found..., please execute: alias conjur='docker run --rm -it --network host -v $HOME:/root -it cyberark/conjur-cli:5'
 
+### 5.0. Initialize internal CA
+1. Initialize internal CA that will be used for K8S Authenticator
+   ```bash
+   docker exec conjur-appliance chpst -u conjur conjur-plugin-service possum rake authn_k8s:ca_init["conjur/authn-k8s/okd"]
+   ```
+2. Access Conjur master UI and verify that conjur/authn-k8s/okd/ca/cert and conjur/authn-k8s/okd/ca/key have value not blank
 
-
-
+### 6.0. Enable K8S Authetnication on Master node
+1. Add CONJUR_AUTHENTICATORS="authn,authn-k8s/okd" to /opt/conjur/etc/conjur.conf in Master container
+   ```bash
+   sudo docker exec -it conjur-appliance vi /opt/conjur/etc/conjur.conf
+   ```
+2. Restart conjur service to apply this change.
+   ```bash
+   sudo docker exec conjur-appliance sv restart conjur
+   ```
+3. Verify that okd authenticator is now enabled on Master
+   ```bash
+   curl -k https://master-dap.cyberarkdemo.com/info
+   ```
+3.1 You see this output
+    ```
+     "enabled": [
+      "authn",
+      "authn-k8s/okd"
+    ```
