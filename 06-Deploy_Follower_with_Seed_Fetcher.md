@@ -2,7 +2,9 @@
 Deploy the Follower to your EKS Cluster Node
 
 ### 1.0. Collect those yaml files
-authn-k8s-cluster.yaml
+1. authn-k8s-cluster.yaml
+2. conjur-authenticator-role.yaml
+3. conjur-authenticator-role-binding.yaml 
 
 ### 2.0. Push Conjur Contrainer Image to AWS Container Repositories Services
 
@@ -84,3 +86,43 @@ authn-k8s-cluster.yaml
       "authn",
       "authn-k8s/okd"
     ```
+    
+### 7.0. Create cluster role and role binding for conjur-cluster service account.
+1. Copy conjur-authenticator-role.yaml and conjur-authenticator-role-binding.yaml to /home/ec2-user/conjur_policy
+2. Review conjur-authenticator-role.yaml and conjur-authenticator-role-binding.yaml
+4. Use kubectl to apply it.
+   '''bash
+   kubectl apply -f ./conjur-authenticator-role.yaml
+   kubectl apply -f ./conjur-authenticator-role-binding.yaml
+   ```
+   
+### 8.0. Configure EKS Cluster API Detail in Conjur
+```bash
+TOKEN_SECRET_NAME="$(kubectl get secrets -n dap \
+| grep 'conjur.*service-account-token' \
+| head -n1 \
+| awk '{print $1}')"
+CA_CERT="$(kubectl get secret -n dap $TOKEN_SECRET_NAME -o json \
+| jq -r '.data["ca.crt"]' \
+| base64 --decode)"
+SERVICE_ACCOUNT_TOKEN="$(kubectl get secret -n dap $TOKEN_SECRET_NAME -o json \
+| jq -r .data.token \
+| base64 --decode)"
+API_URL="$(kubectl config view --minify -o json \
+| jq -r '.clusters[0].cluster.server')"
+```
+
+### 9.0. Verify the vaules in the environmental variables
+```bash
+echo $TOKEN_SECRET_NAME
+echo $CA_CERT
+echo $SERVICE_ACCOUNT_TOKEN
+echo $API_URL
+```
+
+### 10.0. Load them to Conjur as variables
+```bash
+conjur variable values add conjur/authn-k8s/eks/kubernetes/ca-cert "$CA_CERT"
+conjur variable values add conjur/authn-k8s/eks/kubernetes/service-account-token "$SERVICE_ACCOUNT_TOKEN"
+conjur variable values add conjur/authn-k8s/eks/kubernetes/api-url "$API_URL"
+```
