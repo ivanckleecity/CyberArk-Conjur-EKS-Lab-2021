@@ -33,4 +33,14 @@ mysql -u cityapp -p
 use world; 
 show tables; 
 ```
+- Example output
+mysql> show tables;
++-----------------+
+| Tables_in_world |
++-----------------+
+| city            |
+| country         |
+| countrylanguage |
++-----------------+
+
 
