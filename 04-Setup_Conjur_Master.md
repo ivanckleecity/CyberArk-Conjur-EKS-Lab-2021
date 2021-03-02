@@ -97,6 +97,9 @@ sudo docker run --name conjur-appliance -d --restart=always --security-opt secco
 7. Load initial root policy to Conjur Master
 
    ```
+   cd ~
+   mkdir conjur_policy
+   cp root.yaml ./conjur_policy (Remark: root.yaml is in step 1)
    conjur authn login -u admin
-   conjur policy load root ./root.yaml
+   conjur policy load root /root/conjur_policy/root.yaml
    ```
