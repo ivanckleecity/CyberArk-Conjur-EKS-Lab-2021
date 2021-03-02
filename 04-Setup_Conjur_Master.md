@@ -46,7 +46,7 @@ sudo docker run --name conjur-appliance -d --restart=always --security-opt secco
    ```
 
 3.	Let's configure the DAP master instance and import the cert
-   ```
+   ```bash
    sudo docker exec -it conjur-appliance bash
    evoke configure master --accept-eula -h master-dap.cyberarkdemo.com --master-altnames "master-dap.cyberarkdemo.com" -p <your design password> cyberark
    *** Remark: Your Conjur Master is Internet faceing, please use a complex enough password for the Conjur Master <your design password>
@@ -56,7 +56,6 @@ sudo docker run --name conjur-appliance -d --restart=always --security-opt secco
    evoke ca import --key follower-dap.key.pem follower-dap.cer.pem
    evoke ca import --key master-dap.key.pem --set master-dap.cer.pem
    ```
-   Remark: Your Conjur Master is Internet faceing, please use a complex enough password for the Conjur Master <your design password>
 
 4. Clean up the cert file and exit back to Jump Host Shell
    ```bash
@@ -75,6 +74,10 @@ sudo docker run --name conjur-appliance -d --restart=always --security-opt secco
    Trust this certificate|yes
    acccount name|cyberark
    ```
-conjur authn login -u admin
-conjur policy load root /root/policy/root.yaml
-```
+   
+6. Check your Conjur Master is running good
+   ```
+   Access your Conjur Web UI (that will be your Jump Host AWS public dns name)
+   Example: https://ec2-xxxxxxxxxx.ap-east-1.compute.amazonaws.com/
+   Login as admin and use your Conjur Master password in step 3
+   ```
