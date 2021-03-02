@@ -49,12 +49,14 @@ sudo docker run --name conjur-appliance -d --restart=always --security-opt secco
    ```
    sudo docker exec -it conjur-appliance bash
    evoke configure master --accept-eula -h master-dap.cyberarkdemo.com --master-altnames "master-dap.cyberarkdemo.com" -p <your design password> cyberark
+   *** Remark: Your Conjur Master is Internet faceing, please use a complex enough password for the Conjur Master <your design password>
    cd /tmp
    tar -zxvf dap-certificate.tgz
    evoke ca import --root /tmp/dc1-ca.cer.pem
    evoke ca import --key follower-dap.key.pem follower-dap.cer.pem
    evoke ca import --key master-dap.key.pem --set master-dap.cer.pem
-   ```	
+   ```
+   Remark: Your Conjur Master is Internet faceing, please use a complex enough password for the Conjur Master <your design password>
 
 4. Clean up the cert file and exit back to Jump Host Shell
    ```bash
