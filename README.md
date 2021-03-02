@@ -32,3 +32,5 @@ The application will connect to a MySQL database to retreive data, and during au
 ### [Task 3: Setup DataBase Server](03-Setup_DataBase_Server.md)
 
 ### [Task 4: Setup Conjur Master Server](04-Setup_Conjur_Master.md)
+
+### [Task 5: Deploy Follower with Seed Fetcher](05-Deploy_Follower_with_Seed_Fetcher.md)
