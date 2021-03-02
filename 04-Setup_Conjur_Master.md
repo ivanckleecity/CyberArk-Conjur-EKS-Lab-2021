@@ -98,5 +98,5 @@ sudo docker run --name conjur-appliance -d --restart=always --security-opt secco
 
    ```
    conjur authn login -u admin
-   conjur policy load root /root/policy/root.yaml
+   conjur policy load root ./root.yaml
    ```
