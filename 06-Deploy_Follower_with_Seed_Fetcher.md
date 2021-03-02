@@ -1,5 +1,6 @@
 # Objectives
 Deploy the Follower to your EKS Cluster Node
+We will deploy followers with seed-fetcher, which automatically authenticate and retrieve seed on Pod start up. This allow self-healing and auto scaling of follower pods. We will also enable k8s authenicator to support the following labs.
 
 ### 1.0. Collect those yaml files
 1. authn-k8s-cluster.yaml
@@ -122,7 +123,22 @@ echo $API_URL
 
 ### 10.0. Load them to Conjur as variables
 ```bash
-conjur variable values add conjur/authn-k8s/eks/kubernetes/ca-cert "$CA_CERT"
-conjur variable values add conjur/authn-k8s/eks/kubernetes/service-account-token "$SERVICE_ACCOUNT_TOKEN"
-conjur variable values add conjur/authn-k8s/eks/kubernetes/api-url "$API_URL"
+conjur variable values add conjur/authn-k8s/okd/kubernetes/ca-cert "$CA_CERT"
+conjur variable values add conjur/authn-k8s/okd/kubernetes/service-account-token "$SERVICE_ACCOUNT_TOKEN"
+conjur variable values add conjur/authn-k8s/okd/kubernetes/api-url "$API_URL"
+```
+
+### 11.0. Add Conjur Master certificate to config map. This will be used by seedfetcher to validate Conjur Master
+```bash
+openssl s_client -showcerts -connect master-dap.cyberarkdemo.com:443 -servername master-dap.cyberarkdemo.com </dev/null | sed -ne '/-BEGIN CERTIFICATE-/,/-END CERTIFICATE-/p' > master-certificate.pem
+kubectl create configmap master-certificate --from-file=ssl-certificate=<(cat master-certificate.pem) -n dap
+```
+
+### 12.0. Deploy the Follower Seedfetcher
+1. Copy the follower-dap-seedfetcher.yaml to /home/ec2-user/conjur_policy
+2. Review and make necessary changes to follower-dap-seedfetcher.yaml deployment yaml.
+3. Use kubectl command to apply.
+```bash
+cd /home/ec2-user/conjur_policy
+kubectl apply -f ./follower-dap-with-seedfetcher.yaml -n dap
 ```
