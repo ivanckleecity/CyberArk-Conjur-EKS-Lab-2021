@@ -77,9 +77,15 @@ sudo docker run --name conjur-appliance -d --restart=always --security-opt secco
    
 6. Check your Conjur Master is running good
    ```
-   Access your Conjur Web UI (that will be your Jump Host AWS public dns name)
-   Example: https://ec2-xxxxxxxxxx.ap-east-1.compute.amazonaws.com/
-   Login as admin and use your Conjur Master password in step 3
-   If your Conjur Master is running good, you should be seeing samilar UI in below
+   6.1. Access your Conjur Web UI (that will be your Jump Host AWS public dns name)
+        Example: https://ec2-xxxxxxxxxx.ap-east-1.compute.amazonaws.com/
+        
+   6.2. Login as admin and use your Conjur Master password in step 3
+        If your Conjur Master is running good, you should be seeing samilar UI in below
    ```
+   
+   ### Login UI
    ![Architecture](https://github.com/ivanckleecity/CyberArk-DAP-EKS-Lap-2021/blob/main/images/04-ConjurLoginUI.JPG)
+   
+   ### Conjur Master UI
+   ![Architecture](https://github.com/ivanckleecity/CyberArk-DAP-EKS-Lap-2021/blob/main/images/04-ConjurLandingPage.JPG)
