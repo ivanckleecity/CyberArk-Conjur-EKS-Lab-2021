@@ -32,17 +32,20 @@ Install CyberArk Conjur Master
 
 1. Spin up the master container
 ```bash
-docker run --name conjur-appliance -d --restart=always --security-opt seccomp:unconfined -p "443:443" -p "636:636" -p "5432:5432" -p "1999:1999" conjur-appliance:12.0.0
+sudo docker run --name conjur-appliance -d --restart=always --security-opt seccomp:unconfined -p "443:443" -p "636:636" -p "5432:5432" -p "1999:1999" conjur-appliance:12.0.0
 ```
 
-2. Copy the cert
+2. Signed Certificate
+If you don't want to generate the Conjur Certificate 'dap-certificate.tgz', you can collect the our demo cert for this testing setup envirunment
+If you want to generate your own Certificate, please follow this Conjur Cert generation guide. https://github.com/dataplex/dap-cert-generator
+
 ```bash
-docker cp /root/dap-certificate.tgz conjur-appliance:/tmp/dap-certificate.tgz
+sudo docker cp /root/dap-certificate.tgz conjur-appliance:/tmp/dap-certificate.tgz
 ```
 
 3.	Let's configure the DAP master instance and import the cert
 ```
-docker exec -it conjur-appliance bash
+sudo docker exec -it conjur-appliance bash
 
 evoke configure master --accept-eula -h master-dap.cyberarkdemo.com --master-altnames "master-dap.cyberarkdemo.com" -p <your design password> cyberark
 cd /tmp
