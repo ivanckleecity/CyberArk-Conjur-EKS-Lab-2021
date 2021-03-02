@@ -2,10 +2,10 @@
 Install CyberArk Conjur Master
 
 ### 1.0. Collect the Conjur Installer and seed fectcher from CyberArk Sales team
-conjur-appliance_xx.x.x.tar.gz
-dap-seedfetcher_x.x.x.tar.gz
-*** the xx.x.x is the Conjur version ***
-Upload to your Jump Host
+1. conjur-appliance_xx.x.x.tar.gz
+2. dap-seedfetcher_x.x.x.tar.gz
+   *** the xx.x.x is the Conjur version ***
+3. Upload to your Jump Host
 
 ### 1.1. Install Conjur Master
 
