@@ -23,12 +23,18 @@ authn-k8s-cluster.yaml
 3. Tag and push the conjur contrainer image to AWS ECR
    ```
    docker tag registry.tld/conjur-appliance:12.0.0 <your aws ecr account><your name>/conjur-appliance:12.0.0
+   docker tag cyberark/dap-seedfetcher:0.1.5 <your aws ecr account><your name>Don/dap-seedfetcher:0.1.5
    docker push <your aws ecr account><your name>/conjur-appliance:12.0.0
+   docker push <your aws ecr account><your name>/dap-seedfetcher:0.1.5
    ```
    ```
    Example
    docker tag registry.tld/conjur-appliance:12.0.0 1234567890123.dkr.ecr.ap-southeast-1.amazonaws.com/ivanlee/conjur-appliance:12.0.0
-   docker push 409556437035.dkr.ecr.ap-southeast-1.amazonaws.com/ivanlee/conjur-appliance:12.0.0
+   docker push 1234567890123.dkr.ecr.ap-southeast-1.amazonaws.com/ivanlee/conjur-appliance:12.0.0
+   
+   docker tag cyberark/dap-seedfetcher:0.1.5 1234567890123.dkr.ecr.ap-southeast-1.amazonaws.com/ivanlee/dap-seedfetcher:0.1.5
+   docker push 1234567890123.dkr.ecr.ap-southeast-1.amazonaws.com/ivanlee/dap-seedfetcher:0.1.5
+   
    The push refers to repository [1234567890123.dkr.ecr.ap-southeast-1.amazonaws.com/ivanlee/conjur-appliance] 4df15f8657f2: Pushed
    12.0.0: digest: sha256:0b9aba05256abc17a70aca36e4911d13b4bbecfef861c56e8d0d9b08a4c3ed2e size: 530
    ```
