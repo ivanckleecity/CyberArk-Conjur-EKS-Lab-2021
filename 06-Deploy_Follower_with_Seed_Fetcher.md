@@ -48,4 +48,16 @@ authn-k8s-cluster.yaml
    ```bash
    kubectl create serviceaccount conjur-cluster -n dap
    ```
+   
+### 4.0. Load Conjur Policies
+1. Review conjur policy files authn-k8s-cluster.yaml and make necessary changes before load it to conjur
+2. Copy authn-k8s-cluster.yaml to /home/ec2-user/conjur_policy
+3. Load the authn-k8s-cluster.yaml to Conjur Master
+   ```bash
+   conjur policy load root /root/policy/authn-k8s-cluster.yaml
+   ```
+4. Remark, If an error bash: conjur: command not found..., please execute: alias conjur='docker run --rm -it --network host -v $HOME:/root -it cyberark/conjur-cli:5'
+
+
+
 
