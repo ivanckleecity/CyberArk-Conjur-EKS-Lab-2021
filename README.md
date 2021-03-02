@@ -20,9 +20,10 @@ The application will connect to a MySQL database to retreive data, and during au
 ## Technical Procedure
 
 ### Prerequisite
-- Understand basic Linux installation and administration
-- Unkerstand basic Kubernetes setup and administration
-- Understand basic AWS administration
+- You passed CyberArk CPE or CDE
+- You have basic Linux installation and administration
+- You have basic AWS administration
+- You have basic Kubernetes setup and administration
 
 ### [Task 0: Setup Jump Host](00-Setup_Jump_Host.md)
 
