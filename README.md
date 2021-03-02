@@ -20,7 +20,7 @@ The application will connect to a MySQL database to retreive data, and during au
 ### Prerequisite
 - You passed CyberArk CPE or CDE
 - You have basic understanding Linux installation and administration
-- You have basic AWS administration
+- You have basic understanding AWS configuration and administration
 - You need to know how to config AWS Route 53 to setup Internal DNS for your lab envirunment
 - You have basic understanding EKS Kubernetes setup and administration
 
