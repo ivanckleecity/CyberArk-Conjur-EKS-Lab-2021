@@ -1,9 +1,7 @@
 # CyberArk DAP AWS EKS Integration Lab 2021
-This is a tutorial on how to secure secrets of AWS EKS applications by CyberArk Dynamic Access Provider (DAP).   
-We will cover deploying DAY Master, DAP follower instances by follower seed fetcher.
-Secretless Broker & inital container will also be covered in this tutorial.
-
-Extra tech challenges will be included in each sections for quick learners.
+This is a tutorial on how to secure secrets of AWS EKS applications by CyberArk Secrets Manager Conjur.   
+We will cover deploying Conjur Master, Conjur follower instances by follower seed fetcher.
+Conjur Secretless Broker & inital container will also be covered in this tutorial.
 
 ## Overview
 
