@@ -1,7 +1,7 @@
 # Objectives
 Install CyberArk Conjur Master
 
-### 1.0. Collect the Conjur Installer and seed fectcher from CyberArk Sales team
+### 1.0. Collect the Conjur Installer and seed fectcher from your local CyberArk Sales Engineer Team
 1. conjur-appliance_xx.x.x.tar.gz
 2. dap-seedfetcher_x.x.x.tar.gz
 3. Upload to your Jump Host
@@ -28,4 +28,47 @@ Install CyberArk Conjur Master
    registry.tld/conjur-appliance   12.0.0              6e8aad127725        2 months ago        1.19GB
    cyberark/dap-seedfetcher        0.1.5               fed063656f4b        8 months ago        30MB
    ```
-### 1.2. Create eks cluster
+### 1.2. Start DAP Master with signed certificate
+
+1. Spin up the master container
+```bash
+docker run --name conjur-appliance -d --restart=always --security-opt seccomp:unconfined -p "443:443" -p "636:636" -p "5432:5432" -p "1999:1999" conjur-appliance:12.0.0
+```
+
+2. Copy the cert
+```bash
+docker cp /root/dap-certificate.tgz conjur-appliance:/tmp/dap-certificate.tgz
+```
+
+3.	Let's configure the DAP master instance and import the cert
+```
+docker exec -it conjur-appliance bash
+
+evoke configure master --accept-eula -h master-dap.cyberarkdemo.com --master-altnames "master-dap.cyberarkdemo.com" -p <your design password> cyberark
+cd /tmp
+tar -zxvf dap-certificate.tgz
+evoke ca import --root /tmp/dc1-ca.cer.pem
+evoke ca import --key follower-dap.key.pem follower-dap.cer.pem
+evoke ca import --key master-dap.key.pem --set master-dap.cer.pem
+```	
+
+4. Clean up the cert file and exit back to `DAP-MASTER` VM
+```bash
+rm dap-certificate.tgz *.pem
+exit
+```
+
+5. Setup conjur CLI and load initial policy
+
+```bash
+alias conjur='docker run --rm -it --network host -v $HOME:/root -it cyberark/conjur-cli:5'
+conjur init -u https://master-dap.cyberarkdemo.com
+```
+Key|Value
+---|-----
+Trust this certificate|yes
+acccount name|cyberark
+```
+conjur authn login -u admin
+conjur policy load root /root/policy/root.yaml
+```
