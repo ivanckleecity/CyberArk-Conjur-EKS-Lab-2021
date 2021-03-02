@@ -36,12 +36,12 @@ sudo docker run --name conjur-appliance -d --restart=always --security-opt secco
 ```
 
 2. Signed Certificate
-If you don't want to generate the Conjur Certificate 'dap-certificate.tgz', you can collect the our demo cert for this testing setup envirunment
-If you want to generate your own Certificate, please follow this Conjur Cert generation guide. https://github.com/dataplex/dap-cert-generator
+    2.1. If you don't want to generate the Conjur Certificate 'dap-certificate.tgz', you can collect the our demo cert for this testing setup envirunment
+    2.1. If you want to generate your own Certificate, please follow this Conjur Cert generation guide. https://github.com/dataplex/dap-cert-generator
 
-```bash
-sudo docker cp /root/dap-certificate.tgz conjur-appliance:/tmp/dap-certificate.tgz
-```
+    ```bash
+    sudo docker cp ./dap-certificate.tgz conjur-appliance:/tmp/dap-certificate.tgz
+    ```
 
 3.	Let's configure the DAP master instance and import the cert
 ```
