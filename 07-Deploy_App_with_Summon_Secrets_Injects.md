@@ -54,9 +54,9 @@ curl -k http://127.0.0.1:3000
 ```
 [ec2-user@dap ~]$ kubectl get pod -n cityapp
 NAME                                   READY   STATUS    RESTARTS   AGE
-cityapp-summon-init-65f49fc8b7-k55xh   1/1     Running   0          9h
+cityapp-summon-init-fc8b765f32-k55xh   1/1     Running   0          9h
 
-[ec2-user@dap ~]$ kubectl exec -it cityapp-summon-init-65f49fc8b7-k55xh -n cityapp bash
+[ec2-user@dap ~]$ kubectl exec -it cityapp-summon-init-fc8b765f32-k55xh -n cityapp bash
 kubectl exec [POD] [COMMAND] is DEPRECATED and will be removed in a future version. Use kubectl kubectl exec [POD] -- [COMMAND] instead.
 bash-4.4# curl -k http://127.0.0.1:3000
 <title> Random World Cities! </title>
