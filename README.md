@@ -38,3 +38,5 @@ The application will connect to a MySQL database to retreive data, and during au
 ### [Task 5: Setup Conjur Master Server](05-Setup_Conjur_Master.md)
 
 ### [Task 6: Deploy Follower with Seed Fetcher](06-Deploy_Follower_with_Seed_Fetcher.md)
+
+### [Task 7: Deploy App to EKS Cluster with CyberArk Summon Secrets Injection](07-Deploy_App_with_Summon_Secrets_Injects.md)
