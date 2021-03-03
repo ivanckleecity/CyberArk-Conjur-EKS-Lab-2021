@@ -1,5 +1,5 @@
 # Objectives
-Install all necessary software for your next labs
+Install all necessary software for your next labs, those software are 
 git
 jq
 homebrew
