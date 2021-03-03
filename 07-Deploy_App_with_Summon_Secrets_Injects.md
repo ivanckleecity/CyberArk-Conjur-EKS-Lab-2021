@@ -2,10 +2,16 @@
 Deploy secure applications with summon injects secrets into environment variables
 
 ### 1.0. Collect the Conjur Installer and seed fectcher from your local CyberArk Sales Engineer Team
-1. conjur-appliance_xx.x.x.tar.gz
-2. dap-seedfetcher_x.x.x.tar.gz (Remark: the xx.x.x is the Conjur version)
-3. Upload to your Jump Host
-4. conjur policy files (root.yaml)
+
+
+conjur policy load root /root/conjur_policy/projects-authn.yaml
+conjur policy load root /root/conjur_policy/app-identity.yaml
+conjur policy load root /root/conjur_policy/safe-permission.yaml
+conjur variable values add cust_portal/username cityapp
+conjur variable values add cust_portal/password Cyberark1
+kubectl create configmap follower-certificate --from-file=ssl-certificate=<(cat follower-dap.cer.pem) -n cityapp
+kubectl create configmap cityapp-summon-init-config --from-file=secrets.yaml -n cityapp
+
 
 # Secure applications with init Container and summon 
 
