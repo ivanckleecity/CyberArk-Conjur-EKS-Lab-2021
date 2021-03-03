@@ -27,7 +27,7 @@ The application will connect to a MySQL database to retreive data, and during au
 
 ### [Task 0: Setup Jump Host](00-Setup_Jump_Host.md)
 
-### [Task 1: Install Necessary Software](01-Install_Necessary_Software.md)
+### [Task 1: Install Necessary Software in Jump Host](01-Install_Necessary_Software.md)
 
 ### [Task 2: Create EKS Cluster](02-Create_EKS_Cluster.md)
 
