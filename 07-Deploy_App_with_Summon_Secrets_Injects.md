@@ -27,7 +27,7 @@ kubectl create configmap follower-certificate --from-file=ssl-certificate=<(cat 
 ```
 - the follower-dap.cer.pem are mentioned in step 1 
 
-### 5.0 Load this file as Openshift ConfigMap
+### 5.0 Load the secrets yaml file as EKS Cluster ConfigMap
 ```bash
 kubectl create configmap cityapp-summon-init-config --from-file=secrets.yaml -n cityapp
 ```
