@@ -41,4 +41,4 @@ The application will connect to a MySQL database to retreive data, and during au
 
 ### [Task 7: Deploy App to EKS Cluster with CyberArk Summon Secrets Injection](07-Deploy_App_with_Summon_Secrets_Injects.md)
 
-### [Task 8: Deploy App to EKS Cluster with CyberArk Secretless Broker](80-Deploy_App_with_Cyberark_Secretless_Broker.md)
+### [Task 8: Deploy App to EKS Cluster with CyberArk Secretless Broker](08-Deploy_App_with_Cyberark_Secretless_Broker.md)
