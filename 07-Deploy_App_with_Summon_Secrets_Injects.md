@@ -33,14 +33,14 @@ kubectl create configmap cityapp-summon-init-config --from-file=secrets.yaml -n 
 ```
 - the secrets.yaml are mentioned in step 1 
 
-### Deploy the Cityapp Summon to your EKS Cluster
+### 6.0 Deploy the Cityapp Summon to your EKS Cluster
 1. Review and make necessary changes to cityapp-summon-init.yaml deployment file
 2. Apply this to deploy cityapp-summon-init Observe how summon is triggered in command overrides. 
 ```bash
 kubectl apply -f cityapp-summon-init.yaml -n cityapp
 ```
 
-### Check if your cityapp summon container running good
+### 7.0 Check if your cityapp summon container running good
 1. Go in your cityapp-summon-init shell
 ```bash
 kubectl get pod -n cityapp
