@@ -1,6 +1,38 @@
 # Objectives
-Deploy secure applications with summon injects secrets into environment variables
+We are going to deploy secure applications with summon injects secrets into environment variables. We will now redeploy cityapp from Task 4 without hardcode credential by using summon to retrieve secrets from Conjur and inject to environment variable. To use summon to inject secret for container, the summon binary has to be included in application image.  The cityapp is already built with summon. You may review the Dockerfile for more detail
 
+### 1.0. Collect those yaml files
+- projects-authn.yaml
+- app-identity.yaml
+- safe-permission.yaml
+- secrets.yaml
+- follower-dap.cer.pem
+
+### 2.0 Then load these policy files to permit application namespace to authenticate and fetch secrets.
+1. Copy projects-authn.yaml, app-identity.yaml and safe-permission.yaml to /home/ec2-user/conjur_policy
+2. Load the below policy to Conjur Master
+```bash
+conjur policy load root /root/conjur_policy/projects-authn.yaml
+conjur policy load root /root/conjur_policy/app-identity.yaml
+conjur policy load root /root/conjur_policy/safe-permission.yaml
+```
+### 3.0 Add the User name and password to cust_portal/username and cust_portal/password
+```bash
+conjur variable values add cust_portal/username cityapp
+conjur variable values add cust_portal/password Cyberark1
+```
+### 4.0 Create configmap for follower certificate in Cityapp namespace
+```bash
+kubectl create configmap follower-certificate --from-file=ssl-certificate=<(cat follower-dap.cer.pem) -n cityapp
+```
+- the follower-dap.cer.pem are mentioned in step 1 
+
+### 5.0 Load this file as Openshift ConfigMap
+```bash
+kubectl create configmap cityapp-summon-init-config --from-file=secrets.yaml -n cityapp
+```
+- the secrets.yaml are mentioned in step 1 
+- 
 ### 1.0. Collect the Conjur Installer and seed fectcher from your local CyberArk Sales Engineer Team
 
 
