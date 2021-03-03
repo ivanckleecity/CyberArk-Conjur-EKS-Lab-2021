@@ -64,5 +64,4 @@ bash-4.4# curl -k http://127.0.0.1:3000
 <p style="font-size:30px"><b>Kallithea</b> is a city in Attika, Greece with a population of 114233
 <br><br><br><p>
 <small>Connected to database world on exampledb.cusiivm6n9hm.ap-southeast-1.rds.amazonaws.com:3306 using username: admin and password: Ixia1234!</small>
-
 ```
