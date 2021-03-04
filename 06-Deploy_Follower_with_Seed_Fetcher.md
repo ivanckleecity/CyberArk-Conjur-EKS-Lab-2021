@@ -95,6 +95,7 @@ We will deploy followers with seed-fetcher, which automatically authenticate and
    ```bash
    kubectl apply -f ./conjur-authenticator-role.yaml
    kubectl apply -f ./conjur-authenticator-role-binding.yaml
+   kubectl apply -f ./conjur-authenticator-clusterole-binding.yaml -n dap
    ```
    
 ### 8.0. Configure EKS Cluster API Detail in Conjur
