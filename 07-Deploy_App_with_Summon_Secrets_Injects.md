@@ -23,7 +23,8 @@ conjur variable values add cust_portal/password Cyberark1
 ```
 ### 4.0 Create configmap for follower certificate in Cityapp namespace
 ```bash
-kubectl create configmap follower-certificate --from-file=ssl-certificate=<(cat follower-dap.cer.pem) -n cityapp
+kubectl exec -it follower-<pod ID> -n dap cat /opt/conjur/etc/ssl/conjur.pem > follower-certificate.pem
+kubectl create configmap follower-certificate --from-file=ssl-certificate=<(cat follower-certificate.pem) -n cityapp
 ```
 - the follower-dap.cer.pem are mentioned in step 1 
 
