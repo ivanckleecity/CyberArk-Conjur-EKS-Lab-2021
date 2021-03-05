@@ -39,14 +39,15 @@ In this lab, we are going to get familar with EKS by deploying a sample applicat
    
 ### 4.0. Create Cityapp Namespace in EKS Cluster
 
-1. Let's create a project called `cityapp`
+1. Let's create a namespace called `cityapp`
    ```
    kubectl create namespace cityapp
    ```
-### 5.0. Deploy cityapp to EKS
+### 5.0. Deploy cityapp to EKS Cluster
 
 ```
-mkdir ~/cityapp/cityapp_hardcode
+cd ~
+mkdir -p ~/cityapp/cityapp_hardcode
 Remark: copy cityapp-hardcode.yaml to this folder
 cd ~/cityapp/cityapp_hardcode
 kubectl delete -f cityapp-hardcode.yaml -n cityapp
