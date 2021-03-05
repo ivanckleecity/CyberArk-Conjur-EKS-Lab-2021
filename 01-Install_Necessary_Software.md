@@ -41,7 +41,7 @@ eksctl version
 ```
 cd /usr/local/bin/
 sudo curl -o aws-iam-authenticator https://amazon-eks.s3.us-west-2.amazonaws.com/1.18.9/2020-11-02/bin/linux/amd64/aws-iam-authenticator
-suco chmod 755 ./aws-iam-authenticator
+sudo chmod 755 ./aws-iam-authenticator
 ```
 
 4.0. Install Docker
