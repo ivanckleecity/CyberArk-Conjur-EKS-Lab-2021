@@ -58,5 +58,4 @@ Check if your Docker running correctly
 docker run hello-world
 ```
 Check if you can see...
-Hello from Docker!
-"This message shows that your installation appears to be working correctly."
+"Hello from Docker! This message shows that your installation appears to be working correctly."
