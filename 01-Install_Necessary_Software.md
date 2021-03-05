@@ -53,10 +53,10 @@ sudo groupadd docker
 sudo usermod -a -G docker ec2-user
 newgrp docker 
 ```
-Check if your Docker running correct
+Check if your Docker running correctly
 ```bash
 docker run hello-world
 ```
 Check if you can see...
 Hello from Docker!
-This message shows that your installation appears to be working correctly.
+"This message shows that your installation appears to be working correctly."
