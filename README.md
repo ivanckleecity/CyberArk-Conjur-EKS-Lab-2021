@@ -16,7 +16,7 @@ For more detail about CyberArk Conjur Secrets Manager, please visit the two webs
 - You have basic understanding Docker
 - You have basic understanding MySQL Administration
 - You have basic understanding AWS configuration and administration
-  - For setup the lab, you better knew how to config EC2, VPC, AWS Route 53, Security Group, 
+  - For setup the lab, you better knew how to config EC2, VPC, AWS Route 53, Security Group and Amazon ECR 
 - You have basic understanding AWS EKS Kubernetes setup and administration
 
 ## Lab Architecture
