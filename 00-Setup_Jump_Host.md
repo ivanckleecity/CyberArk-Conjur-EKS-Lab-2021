@@ -26,6 +26,10 @@
 ![](https://github.com/ivanckleecity/CyberArk-DAP-EKS-Lap-2021/blob/main/images/00-03-EC2_Linux_Setup07.PNG)
 
 2.4. Edit Route Tables
+- Go to Route Tables
+- Select the route table ID where link with your VPC ID (created in step 2.1)
+- Select the "Routes tab"
+- Click the "Edit routes"
 - Add default gateway to the Intenet Gateway where you create in step 2.3                                              
 ![](https://github.com/ivanckleecity/CyberArk-DAP-EKS-Lap-2021/blob/main/images/00-03-EC2_Linux_Setup08.PNG)
 
