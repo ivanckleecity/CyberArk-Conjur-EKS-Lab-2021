@@ -6,8 +6,9 @@ Login Docker (If you don't have Docker Hub account, please signup in https://hub
 sudo docker login
 
 
-Create a MySQL container and start up World database server
+Create a MySQL container and run it in your jump host server
 
+- Login to you Jump Host
 ```bash
 cd ~
 mkdir db && cd db
