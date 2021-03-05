@@ -19,6 +19,7 @@
      ![](https://github.com/ivanckleecity/CyberArk-DAP-EKS-Lap-2021/blob/main/images/00-01-vpc-setup02.PNG)
 
 2.3. Create Internet Gateway
+- Create Internet Gateway
 - Give a name to the Internet Gateway
 - Attach to your VPC where you created in step 2.1                                                              
 ![](https://github.com/ivanckleecity/CyberArk-DAP-EKS-Lap-2021/blob/main/images/00-03-EC2_Linux_Setup06.PNG)
