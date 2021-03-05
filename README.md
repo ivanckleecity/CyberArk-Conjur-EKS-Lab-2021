@@ -9,8 +9,9 @@ For more detail about CyberArk Conjur Secrets Manager, please visit the two webs
 - You passed CyberArk CPE or CDE
 - You completed CyberArk Conjur Fundamentals Course
 - You have basic understanding Linux installation and administration
+- You have basic understanding Docker
 - You have basic understanding AWS configuration and administration
-- You need to know how to config AWS Route 53 to setup Internal DNS for your lab envirunment
+  - You need to know how to config AWS Route 53 to setup Internal DNS for your lab envirunment
 - You have basic understanding EKS Kubernetes setup and administration
 
 ## Lab Architecture
