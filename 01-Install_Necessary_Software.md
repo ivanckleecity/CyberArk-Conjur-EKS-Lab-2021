@@ -2,6 +2,8 @@
 Install all necessary software in your jump host for your next labs, those software are 
 git
 jq
+binutils
+gcc
 homebrew
 eksctl
 aws-iam-authenticator
@@ -13,7 +15,7 @@ docker
 sudo yum update
 ```
 
-2.0 Install git and jq
+2.0 Install git, jq, binutils and gcc
 ```bash
 sudo yum install git -y
 sudo yum install jq
