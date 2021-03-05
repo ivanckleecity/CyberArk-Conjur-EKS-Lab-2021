@@ -1,8 +1,5 @@
 # Objectives
-In this lab, we are going to get familar with EKS by deploying a sample application.
-We will deploy our test application 'cityapp'. 
-The application connect to mysql database at Jump Host and display random city name. 
-The application will use hardcoded credential in the deployment configuration.
+In this lab, we are going to get familar with EKS by deploying a sample application. We will deploy our test application 'cityapp' to your EKS Cluster. The application "Cityapp" will access resouce from your mysql database in Jump Host where you created in task 04. The Cityapp will be function as display random city name. In this task, Cityapp will use hardcoded credential in the deployment configuration.
 
 ### 1.0. Collect cityapp images and cityapp-hardcode.yaml
 
