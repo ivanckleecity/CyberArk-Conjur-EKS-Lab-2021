@@ -7,7 +7,8 @@ eksctl
 aws-iam-authenticator
 docker
 
-1.0. Update you Linux JumpHost Software Package
+1.0. Update your Linux JumpHost Software Package
+- Login to your jump host
 ```bash
 sudo yum update
 ```
