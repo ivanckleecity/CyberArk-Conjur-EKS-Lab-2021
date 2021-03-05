@@ -5,7 +5,7 @@
 ## Install Jump Host.
 1.0. Login to your AWS Console
 
-2.1. Create VPC
+2.1. Create VPC (If you have your VPC with Internet Gateway and you want to run your Jump Host in your current VPC, please skip step 2.1 to 2.4)
 - Give a VPC name tag and assign IPv4 CIDR block, all others setting can be default
      ![](https://github.com/ivanckleecity/CyberArk-DAP-EKS-Lap-2021/blob/main/images/00-01-vpc-setup01.PNG)
 
