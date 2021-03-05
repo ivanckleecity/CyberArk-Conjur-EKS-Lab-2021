@@ -2,9 +2,11 @@
 Create you own EKS Cluster envirunment
 
 ### 1.0. Create IAM User for manage EKS Cluster
-- Create a IAM user with necessary permission for it to create and manage EKS cluster
-- That IAM user need Programmatic access
-- Create access key for this user and Please keep the Access Key safely
+- We will not mention how to setup and admin AWS IAM user, if you need to learn, please visit [AWS Online Guide](https://docs.aws.amazon.com/IAM/latest/UserGuide/getting-started_create-admin-group.html)
+- Suggestion steps
+    - Create a IAM user with necessary permission for manage EKS cluster
+    - That IAM user need Programmatic access
+    - Create access key for this user and Please keep the Access Key safely
 
 ### 1.1. Create AWS Credential file in the JumpHost
 ```bash
