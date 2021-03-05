@@ -10,20 +10,23 @@ The application will connect to a MySQL database to retreive data, and during au
 
 [CyberArk Conjur](https://docs.cyberark.com/Product-Doc/OnlineHelp/AAM-DAP/Latest/en/Content/Get%20Started/WhatIsConjur.html) is used in this tutorial to secure & manage the secrets.   
 
-
-## Architecture
-
-![Architecture](https://github.com/ivanckleecity/CyberArk-DAP-EKS-Lap-2021/blob/main/images/architecture_eks.JPG)
-
-## Technical Procedure
-
-### Prerequisite
+## Prerequisite
 - You passed CyberArk CPE or CDE
 - You completed CyberArk Conjur Fundamentals Course
 - You have basic understanding Linux installation and administration
 - You have basic understanding AWS configuration and administration
 - You need to know how to config AWS Route 53 to setup Internal DNS for your lab envirunment
 - You have basic understanding EKS Kubernetes setup and administration
+
+## Architecture
+
+![Architecture](https://github.com/ivanckleecity/CyberArk-DAP-EKS-Lap-2021/blob/main/images/architecture_eks.JPG)
+
+## Lab Guide
+- Task 0 to 1 is to create AWS envirunment to run the Jump Host and Setup the Jump Host
+- Task 2 to 4 is to create an EKS envirunment to run a contrainer App to access a External Database. The External Database will be seating in your Jump Host
+- Task 5 to 7 is to setup CyberArk Conjur Secrets Manager to protect containerized applications and DevOps tools secure access to resources. The lab will show case how to setup and use CyberArk Summon and Secretless Broker 
+
 
 ### [Task 0: Setup Jump Host](00-Setup_Jump_Host.md)
 
