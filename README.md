@@ -1,5 +1,5 @@
 # CyberArk DAP AWS EKS Integration Lab 2021
-This is a tutorial on how to secure secrets of AWS EKS applications by CyberArk Secrets Manager Conjur.   
+This is a tutorial share to you on how to secure secrets of AWS EKS applications by CyberArk Secrets Manager Conjur.   
 We will cover deploying Conjur Master, Conjur follower instances by follower seed fetcher.
 Conjur Secretless Broker & inital container will also be covered in this tutorial.
 
