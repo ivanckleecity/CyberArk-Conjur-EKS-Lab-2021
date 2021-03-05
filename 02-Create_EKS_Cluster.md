@@ -41,3 +41,13 @@ eksctl create cluster  --name <your-cluster-name>  --region <your-region>  --nod
     - eksctl create cluster  --name test-eks-01-ap-east-1  --region ap-east-1  --nodegroup-name test-eks-01-node-ap-east-1  --node-type t2.large --nodes 1
 
 - If you want to learn more about how to use eksctl to setup and manage AWS EKS Cluster, plesea visit [AWS Online Docs](https://docs.aws.amazon.com/eks/latest/userguide/getting-started-eksctl.html)
+
+- Creation takes several minutes
+- If everything good, you should see several lines of output as the cluster are created.
+```
+The last line of output is similar to the following example line.
+[✓]  EKS cluster "my-cluster" in "us-west-2" region is ready
+```
+- If you access AWS EKS Web protal, you should the similar UI and showing "Status" Ready
+
+![Architecture](https://github.com/ivanckleecity/CyberArk-DAP-EKS-Lap-2021/blob/main/images/EKS_Cluster_Sample_UI.JPG)
