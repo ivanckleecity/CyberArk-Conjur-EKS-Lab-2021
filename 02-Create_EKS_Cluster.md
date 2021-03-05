@@ -25,11 +25,13 @@ Default output format [None]: <Just Click Enter>
 aws sts get-caller-identity
 ```
 - Your should see the similar output
+```
 {
-    "Account": "409556437035",
-    "UserId": "AIDAV6W3XJAVSP2IUKHIP",
-    "Arn": "arn:aws:iam::409556437035:user/ivanlee-admin"
+    "Account": "123456789012",
+    "UserId": "xyxyxyxyxyxyxx",
+    "Arn": "arn:aws:iam::123456789012:user/john"
 }
+```
 
 ### 1.2. Create eks cluster
 ```bash
