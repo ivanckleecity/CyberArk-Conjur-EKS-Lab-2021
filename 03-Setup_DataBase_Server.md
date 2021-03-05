@@ -25,8 +25,8 @@ sudo docker run --name mysqldb -v /home/ec2-user/db:/docker-entrypoint-initdb.d 
 ```bash
 sudo docker ps
 ```
-- Example output
-- 76e3a316a7ee        mysql:5.7.29        "docker-entrypoint.s…"   9 seconds ago       Up 6 seconds        0.0.0.0:3306->3306/tcp, 33060/tcp   mysqldb 
+- If run correct, there is the sample output
+     - 76e3a316a7ee        mysql:5.7.29        "docker-entrypoint.s…"   9 seconds ago       Up 6 seconds        0.0.0.0:3306->3306/tcp, 33060/tcp   mysqldb 
 
 3.0 Check if your World Database is running correctly
 ```bash
