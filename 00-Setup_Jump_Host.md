@@ -35,8 +35,11 @@
 
 3.0. Setup EC2 Instances
 
-3.1. Select "Amazon Linux 2 AMI"
-    ![](https://github.com/ivanckleecity/CyberArk-DAP-EKS-Lap-2021/blob/main/images/00-01-Amazon_Linux_2_AMI.PNG)
+3.1. Launch EC2 Instances
+- Start with "Launch instances"
+- Select "Amazon Linux 2 AMI"
+  ![](https://github.com/ivanckleecity/CyberArk-DAP-EKS-Lap-2021/blob/main/images/00-01-Amazon_Linux_2_AMI.PNG)
+-
 
 3.2. Configurate the Amazon Linux 2 (Remark: Below is recommended setting for the Linux JumpHost, if you want you can change it)
 - Instance Type: t2.medium, 2vCPU, 4G Memory
