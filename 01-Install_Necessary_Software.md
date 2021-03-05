@@ -49,5 +49,14 @@ sudo chmod 755 ./aws-iam-authenticator
 cd ~
 sudo yum install -y docker
 sudo service docker start
+sudo groupadd docker
 sudo usermod -a -G docker ec2-user
+newgrp docker 
 ```
+Check if your Docker running correct
+```bash
+docker run hello-world
+```
+Check if you can see...
+Hello from Docker!
+This message shows that your installation appears to be working correctly.
