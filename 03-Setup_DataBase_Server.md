@@ -1,3 +1,6 @@
+# Objectives
+We are going to create a Database (MySQL) in lab envirunment. Later, we will deploy container app to access this MySQL Database and show case how application access resouces without hardcode password
+
 ### Create World DB
 Login Docker (If you don't have Docker Hub account, please signup in https://hub.docker.com
 sudo docker login
