@@ -9,10 +9,21 @@ In this lab, we are going to get familar with EKS by deploying a sample applicat
 2. Load the cityapp container images to docker
    ```
    cd ~
-   mkdir ./cityapp/images
+   mkdir -p ./cityapp/images
    cd ./cityapp/images
-   *** Reamrk: copy Cityapp container image to ~/cityapp/images
-   sudo docker load -i cityapp.tar.gz
+   wget https://github.com/ivanckleecity/CyberArk-DAP-EKS-Lap-2021/raw/main/Task04/build.tar.gz
+   tar -xvf ./build.tar.gz
+   cd ./build
+   ./build.sh
+3. Check if your cityapp container images was builded and pushed into your local docker repository
+   ```
+   docker images
+   
+   Output Example
+   [ec2-user@ip-10-0-1-54 build]$ docker images
+   REPOSITORY          TAG                 IMAGE ID            CREATED             SIZE
+   cityapp             1.0                 5c126890f139        2 minutes ago       291MB
+   ```
 
 ### 3.0. Push Cityapp Contrainer Image to AWS Container Repositories Services
 1. Remark: If you want to know more about ECR https://www.youtube.com/watch?v=Yy9AGt4m0_I
