@@ -10,7 +10,7 @@ For more detail about CyberArk Conjur Secrets Manager, please visit the two webs
 - Release Date 10 March 2021
 
 ## Prerequisite
-- You passed CyberArk CPE or CDE
+- You passed CyberArk CPE or CDE or CPE Conjur Pro2
 - You completed CyberArk Conjur Fundamentals Course
 - You have basic understanding Linux installation and administration
 - You have basic understanding Docker
