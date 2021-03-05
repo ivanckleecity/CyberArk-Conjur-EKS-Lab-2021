@@ -5,6 +5,8 @@ For more detail about CyberArk Conjur Secrets Manager, please visit the two webs
 - [CyberArk Conjur Secrets Manager Enterprise](https://www.cyberark.com/products/secrets-manager-enterprise/)
 - [CyberArk Conjur Online Docs](https://docs.cyberark.com/Product-Doc/OnlineHelp/AAM-DAP/Latest/en/Content/Get%20Started/WhatIsConjur.html)
 
+## Lab Guide Version 1.0
+
 ## Prerequisite
 - You passed CyberArk CPE or CDE
 - You completed CyberArk Conjur Fundamentals Course
