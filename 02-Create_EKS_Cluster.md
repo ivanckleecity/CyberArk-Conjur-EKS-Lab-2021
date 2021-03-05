@@ -1,5 +1,5 @@
 # Objectives
-Create you own EKS Cluster envirunment
+Create you own EKS Cluster envirunment for run the lab
 
 ### 1.0. Create IAM User for manage EKS Cluster
 - We will not mention how to setup and admin AWS IAM user, if you need to learn, please visit [AWS Online Guide](https://docs.aws.amazon.com/IAM/latest/UserGuide/getting-started_create-admin-group.html)
