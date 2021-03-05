@@ -35,10 +35,24 @@ aws sts get-caller-identity
 
 ### 1.2. Create eks cluster
 ```bash
-eksctl create cluster  --name <your-cluster-name>  --region <your-region>  --nodegroup-name <your-cluster-group-name>  --node-type t2.large --nodes 1
+eksctl create cluster \
+> --name <my cluster name> \
+> --version 1.18\
+> --region <your AWS region> \
+> --nodegroup-name <my cluster node name> \
+> --node-type t2.medium \
+> --nodes 1
 ```
 - Example
-    - eksctl create cluster  --name test-eks-01-ap-east-1  --region ap-east-1  --nodegroup-name test-eks-01-node-ap-east-1  --node-type t2.large --nodes 1
+```
+eksctl create cluster \
+> --name test-cluster \
+> --version 1.18 \
+> --region ap-east-1 \
+> --nodegroup-name test-cluster-nodes \
+> --node-type t2.medium \
+> --nodes 1
+```
 
 - If you want to learn more about how to use eksctl to setup and manage AWS EKS Cluster, plesea visit [AWS Online Docs](https://docs.aws.amazon.com/eks/latest/userguide/getting-started-eksctl.html)
 
