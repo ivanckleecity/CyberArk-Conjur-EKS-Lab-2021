@@ -43,7 +43,7 @@
 
 3.2. Configurate the Amazon Linux 2 (Remark: Below is recommended setting for the Linux JumpHost, if you want you can change it)
 - Instance Type: t2.medium, 2vCPU, 4G Memory
-- Security Group: Create a Security Group for this Linux with SSH Open to the World or you workstation
+- Security Group: Create a Security Group for this Linux with SSH Open to you workstation
 - Network: Select your VPC and Subent from step 2.1 and 2.2
 - Network: Enable assign public IP
 - Storage: Assign 20G and gp2
