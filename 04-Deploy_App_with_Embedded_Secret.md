@@ -25,7 +25,7 @@ In this lab, we are going to get familar with EKS by deploying a sample applicat
    cityapp             1.0                 5c126890f139        2 minutes ago       291MB
    ```
 
-### 3.0. Push Cityapp Contrainer Image to AWS Container Repositories Services
+### 3.0. Push Cityapp Contrainer Image to AWS Elastic Container Registry
 1. Remark: If you want to know more about ECR https://www.youtube.com/watch?v=Yy9AGt4m0_I
    ```
    docker tag cityapp:1.0 <your aws account ID>.dkr.ecr.ap-southeast-1.amazonaws.com/<your name>/cityapp:1.0
