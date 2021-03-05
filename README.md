@@ -11,7 +11,7 @@ For more detail about CyberArk Conjur Secrets Manager, please visit the two webs
 - You have basic understanding Linux installation and administration
 - You have basic understanding Docker
 - You have basic understanding AWS configuration and administration
-  - You need to know how to config AWS Route 53 to setup Internal DNS for your lab envirunment
+  - For setup the lab, You need to know how to config EC2, VPC, AWS Route 53, Security Group, 
 - You have basic understanding EKS Kubernetes setup and administration
 
 ## Lab Architecture
