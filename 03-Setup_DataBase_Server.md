@@ -35,7 +35,7 @@ mysql -u cityapp -p
 use world; 
 show tables; 
 ```
-- Example output
+- If run correct, there is the sample output
 ```bash
 mysql> show tables;
 +-----------------+
