@@ -48,6 +48,6 @@ eksctl create cluster  --name <your-cluster-name>  --region <your-region>  --nod
 The last line of output is similar to the following example line.
 [✓]  EKS cluster "my-cluster" in "us-west-2" region is ready
 ```
-- If you access AWS EKS Web protal, you should the similar UI and showing "Status" Ready
+- If you access AWS EKS Web portal, you should the similar UI and showing "Status" Ready
 
 ![Architecture](https://github.com/ivanckleecity/CyberArk-DAP-EKS-Lap-2021/blob/main/images/EKS_Cluster_Sample_UI.JPG)
