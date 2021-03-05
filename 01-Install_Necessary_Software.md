@@ -17,6 +17,8 @@ sudo yum update
 ```bash
 sudo yum install git -y
 sudo yum install jq
+sudo yum install binutils
+sudo yum install gcc
 ```
 3.0. Install eksctl for creating and managing EKS clusters
 
