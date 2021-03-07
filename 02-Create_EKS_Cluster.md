@@ -73,3 +73,4 @@ The last line of output is similar to the following example line.
 - Map master-dap.cyberarkdemo.com to your EKS Node 1 (where you vreated in step 1.2)
 - Map mysql01.cyberarkdemo.com to your EKS Node 1 (where you vreated in step 1.2)
 - Example
+![Route 53 Example](https://github.com/ivanckleecity/CyberArk-DAP-EKS-Lap-2021/blob/main/images/route53_example.JPG)
