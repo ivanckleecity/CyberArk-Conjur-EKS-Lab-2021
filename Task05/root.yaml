@@ -1,0 +1,23 @@
+#root.yml
+
+- !group admins
+
+- !group
+  id: demo-admins
+  owner: !group admins
+
+- !permit
+  role: !group admins
+  privileges: [ read, create, update ]
+  resource: !policy root
+
+# Users and groups will be managed in this policy by ldap-sync.
+# Some of those users and groups may be added to the "admin" group.
+
+- !policy
+  id: demo
+  owner: !group admins
+  body:
+    - !policy
+      id: openshift-apps
+      owner: !group /demo-admins
