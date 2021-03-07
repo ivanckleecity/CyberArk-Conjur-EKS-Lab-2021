@@ -52,7 +52,7 @@ kubectl apply -f cityapp-hardcode.yaml -n cityapp
 ```
 ```
 Output Example
-$ kubectl apply -f cityapp-hardcode.yaml
+$ kubectl apply -f cityapp-hardcode.yaml -n cityapp
 serviceaccount/cityapp-hardcode created
 service/cityapp-hardcode created
 deployment.apps/cityapp-hardcode created
