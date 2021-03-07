@@ -37,7 +37,8 @@ Install CyberArk Conjur Master in Jump Host
 
 1. Spin up the master container
 ```bash
-sudo docker run --name conjur-appliance -d --restart=always --security-opt seccomp:unconfined -p "443:443" -p "636:636" -p "5432:5432" -p "1999:1999" registry.tld/conjur-appliance:12.0.0```
+sudo docker run --name conjur-appliance -d --restart=always --security-opt seccomp:unconfined -p "443:443" -p "636:636" -p "5432:5432" -p "1999:1999" registry.tld/conjur-appliance:12.0.0
+```
 
 2. Signed Certificate
    ```
