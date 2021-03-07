@@ -37,7 +37,19 @@ brew tap weaveworks/tap
 brew install weaveworks/tap/eksctl
 eksctl version
 ```
-3.3 Install aws-iam-authenticator
+3.3 Append the $HOME/.linuxbrew/bin to your user .bash_profile
+- Append $HOME/.linuxbrew/bin to the PATH
+```bash
+vi ~/.bash_profile
+```
+- Example:
+  - PATH=$PATH:$HOME/.local/bin:$HOME/bin:$HOME/.linuxbrew/bin
+- Reload .bash_profile to your current shell
+'''bash
+source ~/.bash_profile
+```
+
+3.4 Install aws-iam-authenticator
 ```
 cd /usr/local/bin/
 sudo curl -o aws-iam-authenticator https://amazon-eks.s3.us-west-2.amazonaws.com/1.18.9/2020-11-02/bin/linux/amd64/aws-iam-authenticator
