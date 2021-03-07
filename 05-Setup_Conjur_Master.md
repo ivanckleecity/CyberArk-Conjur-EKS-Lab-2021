@@ -1,5 +1,5 @@
 # Objectives
-Install CyberArk Conjur Master
+Install CyberArk Conjur Master in Jump Host
 
 ### 1.0. Collect the Conjur Installer and seed fectcher from your local CyberArk Sales Engineer Team
 1. conjur-appliance_xx.x.x.tar.gz
