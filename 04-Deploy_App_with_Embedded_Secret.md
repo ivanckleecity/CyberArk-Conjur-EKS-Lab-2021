@@ -94,5 +94,5 @@ bash-4.4# curl http://127.0.0.1:3000
 bash-4.4#
 ```
 
-### 7.0. Congratulation!!!
+### 7.0 Congratulation!!!
 If you can see random city and courty name, that mean your EKS cluster and mysql World DataBase are running good
