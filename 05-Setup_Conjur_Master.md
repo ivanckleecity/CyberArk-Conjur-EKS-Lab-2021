@@ -16,8 +16,8 @@ Install CyberArk Conjur Master in Jump Host
    - Upload conjur-appliance_xx.x.x.tar.gz and dap-seedfetcher_x.x.x.tar.gz to ~\conjur_installer
    ```bash
    cd ~/conjur_installer
-   docker load -i conjur-appliance-12.0.0.tar.gz
-   docker load -i dap-seedfetcher_0.1.5.tar.gz
+   sudo docker load -i conjur-appliance-12.0.0.tar.gz
+   sudo docker load -i dap-seedfetcher_0.1.5.tar.gz
    docker tag registry.tld/conjur-appliance:12.0.0 conjur-appliance:12.0.0
    ```
 3. Check your images
@@ -37,8 +37,7 @@ Install CyberArk Conjur Master in Jump Host
 
 1. Spin up the master container
 ```bash
-sudo docker run --name conjur-appliance -d --restart=always --security-opt seccomp:unconfined -p "443:443" -p "636:636" -p "5432:5432" -p "1999:1999" conjur-appliance:12.0.0
-```
+sudo docker run --name conjur-appliance -d --restart=always --security-opt seccomp:unconfined -p "443:443" -p "636:636" -p "5432:5432" -p "1999:1999" registry.tld/conjur-appliance:12.0.0```
 
 2. Signed Certificate
    ```
