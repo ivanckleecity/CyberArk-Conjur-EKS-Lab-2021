@@ -46,9 +46,9 @@ In this lab, we are going to get familar with EKS by deploying a sample applicat
 ```
 cd ~
 mkdir -p ~/cityapp/cityapp_hardcode
-Remark: copy cityapp-hardcode.yaml to this folder
 cd ~/cityapp/cityapp_hardcode
-kubectl delete -f cityapp-hardcode.yaml -n cityapp
+wget https://github.com/ivanckleecity/CyberArk-DAP-EKS-Lap-2021/raw/main/Task04/cityapp-hardcode.yaml
+kubectl apply -f cityapp-hardcode.yaml -n cityapp
 ```
 ```
 Output Example
