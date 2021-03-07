@@ -75,7 +75,7 @@ The last line of output is similar to the following example line.
 - Example
 ![Route 53 Example](https://github.com/ivanckleecity/CyberArk-DAP-EKS-Lap-2021/blob/main/images/route53_example.JPG)
 
-### 3.0 Update your Jump Host Security Group to allow EKS Cluster access your Conjur and MySQL in EKS Cluster
+### 3.0 Update your Jump Host Security Group to allow EKS Cluster Plubic IP and JumpHost Public IP public IP FULL access your Jump Host
 
 - Example
 - ![Route 53 Example](https://github.com/ivanckleecity/CyberArk-DAP-EKS-Lap-2021/blob/main/images/JumpHostSecurityGroup.JPG)
