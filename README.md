@@ -21,7 +21,7 @@ For more detail about CyberArk Conjur Secrets Manager, please visit the two webs
 
 ## Lab Architecture
 - EKS is used as platform to host the [demo app](https://github.com/jeepapichet/cityapp). The application will connect to a MySQL database to retreive data, and during authenication, [secrets](https://docs.cyberark.com/Product-Doc/OnlineHelp/AAM-DAP/Latest/en/Content/Get%20Started/key_concepts/secrets.html) will be used by the application
-
+- The lab Conjur was based on Conjur Version 12.0.0
 ![Architecture](https://github.com/ivanckleecity/CyberArk-DAP-EKS-Lap-2021/blob/main/images/architecture_eks.JPG)
 
 ## Lab Guide
