@@ -65,3 +65,11 @@ The last line of output is similar to the following example line.
 - If you access AWS EKS Web portal, you should the similar UI and showing "Active" and "Status Ready"
 
 ![Architecture](https://github.com/ivanckleecity/CyberArk-DAP-EKS-Lap-2021/blob/main/images/EKS_Cluster_Sample_UI.JPG)
+
+### 2.0 Create a Internal Domain in AWS Route 53 for Conjur and Lab envirunment
+
+- In this lab, we will not share how to use and setup AWS Route 53. If you need, please visi [AWS Route 53 Online Docs](https://docs.aws.amazon.com/Route53/latest/DeveloperGuide/getting-started.html)
+- Create an internal domain "cyberarkdemo.com"
+- Map master-dap.cyberarkdemo.com to your EKS Node 1 (where you vreated in step 1.2)
+- Map mysql01.cyberarkdemo.com to your EKS Node 1 (where you vreated in step 1.2)
+- Example
