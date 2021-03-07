@@ -71,18 +71,19 @@ Install CyberArk Conjur Master in Jump Host
    ```
 
 5. Setup conjur CLI and load initial policy
-
+   - Create conjur cli alias
    ```bash
    alias conjur='docker run --rm -it --network host -v $HOME:/root -it cyberark/conjur-cli:5'
-   conjur init -u https://master-dap.cyberarkdemo.com
    ```
-   -Remark: You may add the alias to your .bash_profile, so you don't have to run alias when you login next time
-   
+      -Remark: You may add the alias to your .bash_profile, so you don't have to run alias when you login next time
+   - Init the Conjur Master
+   ```bash
+   conjur init -u https://master-dap.cyberarkdemo.com   
+   ```
    Key|Value
    ---|-----
    Trust this certificate|yes
    acccount name|cyberark
-   ```
    
 6. Check your Conjur Master is running good
    ```
