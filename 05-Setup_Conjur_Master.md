@@ -18,7 +18,7 @@ Install CyberArk Conjur Master in Jump Host
    cd ~/conjur_installer
    sudo docker load -i conjur-appliance-12.0.0.tar.gz
    sudo docker load -i dap-seedfetcher_0.1.5.tar.gz
-   docker tag registry.tld/conjur-appliance:12.0.0 conjur-appliance:12.0.0
+   sudo docker tag registry.tld/conjur-appliance:12.0.0 conjur-appliance:12.0.0
    ```
 3. Check your images
    ```bash
