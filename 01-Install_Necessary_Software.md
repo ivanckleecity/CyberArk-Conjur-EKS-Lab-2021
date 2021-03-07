@@ -45,7 +45,7 @@ vi ~/.bash_profile
 - Example:
   - PATH=$PATH:$HOME/.local/bin:$HOME/bin:$HOME/.linuxbrew/bin
 - Reload .bash_profile to your current shell
-'''bash
+```bash
 source ~/.bash_profile
 ```
 
