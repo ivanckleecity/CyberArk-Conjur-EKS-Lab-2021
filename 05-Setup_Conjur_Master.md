@@ -36,16 +36,15 @@ Install CyberArk Conjur Master in Jump Host
 ### 1.2. Start DAP Master with signed certificate
 
 1. Spin up the master container
-```bash
-sudo docker run --name conjur-appliance -d --restart=always --security-opt seccomp:unconfined -p "443:443" -p "636:636" -p "5432:5432" -p "1999:1999" registry.tld/conjur-appliance:12.0.0
-```
+   ```bash
+   sudo docker run --name conjur-appliance -d --restart=always --security-opt seccomp:unconfined -p "443:443" -p "636:636" -p "5432:5432" -p "1999:1999" registry.tld/conjur-appliance:12.0.0
+   ```
 
-2. Signed Certificate
-   ```
-   2.1 If you don't want to generate the Conjur Certificate 'dap-certificate.tgz', you can collect the our demo cert for this testing setup envirunment
-   2.1 If you want to generate your own Certificate, please follow this Conjur Cert generation guide. https://github.com/dataplex/dap-cert-generator
-   ```
+2. Generate Conjur Certificate Certificate
    
+   - For this lab, we generated a set of Certificate already.
+   - If you want to generate your own Certificate, please follow this Conjur Cert generation guide. https://github.com/dataplex/dap-cert-generator
+      
    ```bash
    sudo docker cp ./dap-certificate.tgz conjur-appliance:/tmp/dap-certificate.tgz
    ```
