@@ -46,6 +46,8 @@ Install CyberArk Conjur Master in Jump Host
    - If you want to generate your own Certificate, please follow this Conjur Cert generation guide. https://github.com/dataplex/dap-cert-generator
       
    ```bash
+   cd ~/conjur_installer
+   wget https://github.com/ivanckleecity/CyberArk-DAP-EKS-Lap-2021/raw/main/Task05/dap-certificate.tgz
    sudo docker cp ./dap-certificate.tgz conjur-appliance:/tmp/dap-certificate.tgz
    ```
 
@@ -53,13 +55,14 @@ Install CyberArk Conjur Master in Jump Host
    ```bash
    sudo docker exec -it conjur-appliance bash
    evoke configure master --accept-eula -h master-dap.cyberarkdemo.com --master-altnames "master-dap.cyberarkdemo.com" -p <your design password> cyberark
-   *** Remark: Your Conjur Master is Internet faceing, please use a complex enough password for the Conjur Master <your design password>
+   *** Remark: Your Conjur Master is Internet faceing, please use a complex password for the Conjur Master: <your design password>
    cd /tmp
    tar -zxvf dap-certificate.tgz
    evoke ca import --root /tmp/dc1-ca.cer.pem
    evoke ca import --key follower-dap.key.pem follower-dap.cer.pem
    evoke ca import --key master-dap.key.pem --set master-dap.cer.pem
    ```
+   *** Remark: Make sure all step output without any error
 
 4. Clean up the cert file and exit back to Jump Host Shell
    ```bash
@@ -73,9 +76,7 @@ Install CyberArk Conjur Master in Jump Host
    alias conjur='docker run --rm -it --network host -v $HOME:/root -it cyberark/conjur-cli:5'
    conjur init -u https://master-dap.cyberarkdemo.com
    ```
-   ```
-   You may add the alias to your .bash_profile, so you have conjur alias when you login next time
-   ```
+   -Remark: You may add the alias to your .bash_profile, so you don't have to run alias when you login next time
    
    Key|Value
    ---|-----
