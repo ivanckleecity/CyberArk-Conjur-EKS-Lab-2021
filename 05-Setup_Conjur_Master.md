@@ -33,7 +33,7 @@ Install CyberArk Conjur Master in Jump Host
    cyberark/dap-seedfetcher        0.1.5               fed063656f4b        8 months ago        30MB
    ```
 
-### 1.2. Start DAP Master with signed certificate
+### 1.2. Start Conjur Master with signed certificate
 
 1. Spin up the master container
    ```bash
