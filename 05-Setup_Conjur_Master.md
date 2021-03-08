@@ -87,10 +87,10 @@ Install CyberArk Conjur Master in Jump Host
    
 6. Check your Conjur Master is running good
    ```
-   6.1. Access your Conjur Web UI (that will be your Jump Host AWS public dns name)
+   6.1. Add a Inbound Rules in your AWS EC2 Jump Host Security Group to allow external access to your Jump Host TCP Port 443
+   6.2. Access your Conjur Web UI (that will be your Jump Host AWS public dns name)
         Example: https://ec2-xxxxxxxxxx.ap-east-1.compute.amazonaws.com/
-        
-   6.2. Login as admin and use your Conjur Master password in step 3
+   6.3. Login as admin and use your Conjur Master password in step 3
         If your Conjur Master is running good, you should be seeing samilar UI in below
    ```
    
