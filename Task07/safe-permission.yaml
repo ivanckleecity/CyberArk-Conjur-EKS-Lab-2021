@@ -1,0 +1,20 @@
+#Grant application access to credentials created locally
+- !policy
+  id: cust_portal
+  body:
+  - &init-variables
+    - !variable username
+    - !variable password
+  - !group consumers
+  - !permit
+    role: !group consumers
+    privilege: [ read, execute ]
+    resources: *init-variables
+    
+
+
+- !grant
+  role: !group cust_portal/consumers
+  members:
+  - !layer /openshift-apps/cityapp
+

@@ -1,0 +1,17 @@
+# Define secrets the app has access to
+- !policy
+  id: openshift-apps/cityapp
+  owner: !group admins
+  body:
+  - !layer
+
+  - !grant
+    role: !layer
+    members:
+    - !host /conjur/authn-k8s/okd/apps/cityapp/*/*
+    - !host /conjur/authn-k8s/okd/apps/cityapp/service_account/cityapp-restapi-sidecar
+    - !host /conjur/authn-k8s/okd/apps/cityapp/service_account/cityapp-summon-init
+    - !host /conjur/authn-k8s/okd/apps/cityapp/service_account/cityapp-secretless
+    - !host /conjur/authn-k8s/okd/apps/cityapp/service_account/appdemo-sidecar
+    - !host /conjur/authn-k8s/okd/apps/cityapp/service_account/cityapp-manual-restapi-sidecar
+    - !host /conjur/authn-k8s/okd/apps/cityapp/service_account/cityapp-restapicurl-sidecar

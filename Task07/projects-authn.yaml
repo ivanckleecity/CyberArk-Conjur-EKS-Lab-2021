@@ -1,0 +1,57 @@
+# Sample openshift authenticator policy policy
+- !policy
+  id: conjur/authn-k8s/okd/apps
+  owner: !group admins
+  annotations:
+     description: Identities permitted to authenticator to this cluster
+  body:
+   - !layer
+     annotations:
+       description: Layer of authenticator identities to call authn service
+   - &hosts
+     - !host
+       id: cityapp/*/*
+       annotations:
+         kubernetes/authentication-container-name: authenticator
+         openshift: true
+
+     - !host
+       id: cityapp/service_account/cityapp-restapi-sidecar
+       annotations:
+         kubernetes/authentication-container-name: authenticator
+         openshift: true
+
+     - !host
+       id: cityapp/service_account/cityapp-summon-init
+       annotations:
+         kubernetes/authentication-container-name: authenticator
+         openshift: true
+
+     - !host
+       id: cityapp/service_account/cityapp-secretless
+       annotations:
+         kubernetes/authentication-container-name: authenticator
+         openshift: true
+
+     - !host
+       id: cityapp/service_account/appdemo-sidecar
+       annotations:
+         kubernetes/authentication-container-name: authenticator
+         openshift: true
+
+     - !host
+       id: cityapp/service_account/cityapp-manual-restapi-sidecar
+       annotations:
+         kubernetes/authentication-container-name: authenticator
+         openshift: true
+
+     - !host
+       id: cityapp/service_account/cityapp-restapicurl-sidecar
+       annotations:
+         kubernetes/authentication-container-name: authenticator
+         openshift: true
+
+     # add hosts to the apps layer
+   - !grant
+     role: !layer
+     members: *hosts
