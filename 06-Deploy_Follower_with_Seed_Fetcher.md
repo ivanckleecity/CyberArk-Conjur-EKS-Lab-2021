@@ -4,7 +4,7 @@ Deploy Conjur Follower to your EKS Cluster Node. We will deploy Conjur followers
 ### 1.0. Push Conjur Contrainer Image to AWS Container Repositories Services
 
 1. If you want to know more about ECR https://www.youtube.com/watch?v=Yy9AGt4m0_I
-2. > :bangbang: Reminder: You have legal responsibly to keep the CyberArk Conjur Image/Installer for your own use only, PLEASE MAKE SURE all CyberArk Conjur Image in AWS ECR is set in "Private" to avoid unexpected illegal distribution of DAP images
+2. :bangbang: Reminder: You have legal responsibly to keep the CyberArk Conjur Image/Installer for your own use only, PLEASE MAKE SURE all CyberArk Conjur Image in AWS ECR is set in "Private" to avoid unexpected illegal distribution of DAP images
 3. Login te ECR
    ```bash
    aws ecr get-login-password --region ap-southeast-1 | docker login --username AWS --password-stdin <your aws ecr region account dns>
