@@ -1,11 +1,6 @@
 # Objectives
 Deploy Conjur Follower to your EKS Cluster Node. We will deploy Conjur followers with seed-fetcher, which automatically authenticate and retrieve seed on Pod start up. This allow self-healing and auto scaling of follower pods. We will also enable k8s authenicator to support the following labs.
 
-### 1.0. Collect those yaml files
-1. authn-k8s-cluster.yaml
-2. conjur-authenticator-role.yaml
-3. conjur-authenticator-role-binding.yaml 
-
 ### 1.0. Push Conjur Contrainer Image to AWS Container Repositories Services
 
 1. Remark: If you want to know more about ECR https://www.youtube.com/watch?v=Yy9AGt4m0_I
