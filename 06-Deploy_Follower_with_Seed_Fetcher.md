@@ -54,7 +54,7 @@ Deploy Conjur Follower to your EKS Cluster Node. We will deploy Conjur followers
    ```
    
 ### 3.0. Load Conjur Policies
-1. Download authn-k8s-cluster.yaml. Please review conjur policy files authn-k8s-cluster.yaml and make necessary changes if you envirunment is difference to this lab before load it to conjur
+1. Download authn-k8s-cluster.yaml. Please review conjur policy files authn-k8s-cluster.yaml and make necessary changes if your envirunment is difference to this lab before load it to conjur
 ```bash
 cd ~/conjur_policy
 wget https://github.com/ivanckleecity/CyberArk-DAP-EKS-Lap-2021/raw/main/Task06/authn-k8s-cluster.yaml
@@ -93,16 +93,22 @@ wget https://github.com/ivanckleecity/CyberArk-DAP-EKS-Lap-2021/raw/main/Task06/
     ```
     
 ### 6.0. Create cluster role and role binding for conjur-cluster service account.
-1. Copy conjur-authenticator-role.yaml and conjur-authenticator-role-binding.yaml to /home/ec2-user/conjur_policy
-2. Review conjur-authenticator-role.yaml and conjur-authenticator-role-binding.yaml
-4. Use kubectl to apply it.
+1. Download conjur-authenticator-role.yaml, conjur-authenticator-role-binding.yaml, conjur-authenticator-clusterole-binding.yaml. Please review those role binding files and make necessary changes if your envirunment is difference to this lab before load it to EKS
+```bash
+mkdir -p ~/conjur_follower
+cd ~/conjur_follower
+wget https://github.com/ivanckleecity/CyberArk-DAP-EKS-Lap-2021/raw/main/Task06/conjur-authenticator-clusterole-binding.yaml
+wget https://github.com/ivanckleecity/CyberArk-DAP-EKS-Lap-2021/raw/main/Task06/conjur-authenticator-role-binding.yaml
+wget https://github.com/ivanckleecity/CyberArk-DAP-EKS-Lap-2021/raw/main/Task06/conjur-authenticator-role.yaml
+```
+5. Use kubectl to apply it.
    ```bash
    kubectl apply -f ./conjur-authenticator-role.yaml
    kubectl apply -f ./conjur-authenticator-role-binding.yaml
    kubectl apply -f ./conjur-authenticator-clusterole-binding.yaml -n dap
    ```
    
-### 8.0. Configure EKS Cluster API Detail in Conjur
+### 7.0. Configure EKS Cluster API Detail in Conjur
 ```bash
 TOKEN_SECRET_NAME="$(kubectl get secrets -n dap \
 | grep 'conjur.*service-account-token' \
@@ -118,31 +124,35 @@ API_URL="$(kubectl config view --minify -o json \
 | jq -r '.clusters[0].cluster.server')"
 ```
 
-### 9.0. Verify the vaules in the environmental variables
+### 8.0. Verify the vaules in the environmental variables
 ```bash
 echo $TOKEN_SECRET_NAME
 echo $CA_CERT
 echo $SERVICE_ACCOUNT_TOKEN
 echo $API_URL
 ```
+- Remark: If you missed any output from the above echo, please check and try to do it
 
-### 10.0. Load them to Conjur as variables
+### 9.0. Load them to Conjur as variables
 ```bash
 conjur variable values add conjur/authn-k8s/okd/kubernetes/ca-cert "$CA_CERT"
 conjur variable values add conjur/authn-k8s/okd/kubernetes/service-account-token "$SERVICE_ACCOUNT_TOKEN"
 conjur variable values add conjur/authn-k8s/okd/kubernetes/api-url "$API_URL"
 ```
 
-### 11.0. Add Conjur Master certificate to config map. This will be used by seedfetcher to validate Conjur Master
+### 10.0. Add Conjur Master certificate to config map. This will be used by seedfetcher to validate Conjur Master
 ```bash
 openssl s_client -showcerts -connect master-dap.cyberarkdemo.com:443 -servername master-dap.cyberarkdemo.com </dev/null | sed -ne '/-BEGIN CERTIFICATE-/,/-END CERTIFICATE-/p' > master-certificate.pem
 kubectl create configmap master-certificate --from-file=ssl-certificate=<(cat master-certificate.pem) -n dap
 ```
 
-### 12.0. Deploy the Follower Seedfetcher
-1. Copy the follower-dap-seedfetcher.yaml to /home/ec2-user/conjur_policy
-2. Review and make necessary changes to follower-dap-seedfetcher.yaml deployment yaml.
-3. Use kubectl command to apply.
+### 11.0. Deploy the Follower Seedfetcher
+1. Download follower-dap-seedfetcher.yaml. Please review and make necessary changes to follower-dap-seedfetcher.yaml, if your envirunment is difference to the lab
+```bash
+cd ~/conjur_follower
+wget https://github.com/ivanckleecity/CyberArk-DAP-EKS-Lap-2021/raw/main/Task06/follower-dap-with-seedfetcher.yaml
+```
+4. Use kubectl command to apply.
 ```bash
 cd /home/ec2-user/conjur_policy
 kubectl apply -f ./follower-dap-with-seedfetcher.yaml -n dap
