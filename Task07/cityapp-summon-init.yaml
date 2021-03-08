@@ -1,0 +1,120 @@
+---
+apiVersion: v1
+kind: ServiceAccount
+metadata:
+  name: cityapp-summon-init
+  namespace: cityapp
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: cityapp-summon-init
+  namespace: cityapp
+  labels:
+    app: cityapp-summon-init
+spec:
+  ports:
+  - port: 3000
+    name: http
+  selector:
+    app: cityapp-summon-init
+  type: LoadBalancer
+
+---
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  labels:
+    app: cityapp-summon-init
+  name: cityapp-summon-init
+  namespace: cityapp
+spec:
+  replicas: 1
+  selector:
+   matchLabels:
+    app: cityapp-summon-init
+  template:
+    metadata:
+      labels:
+        app: cityapp-summon-init
+    spec:
+      serviceAccountName: cityapp-summon-init
+      containers:
+      - image: 409556437035.dkr.ecr.ap-southeast-1.amazonaws.com/ivanlee/cityapp:1.0
+        imagePullPolicy: IfNotPresent
+        name: cityapp
+        env:
+# These will be injected as literal value by summon
+#          - name: DBAddress
+#            value: "mysql01.cyberarkdemo.com"
+#          - name: DBName
+#            value: "world"
+#          - name: DBPort
+#            value: "3306"
+          - name: CONJUR_APPLIANCE_URL
+            value: "https://follower.dap.svc.cluster.local/api"
+          - name: CONJUR_ACCOUNT
+            value: "cyberark"
+          - name: CONJUR_SSL_CERTIFICATE
+            valueFrom:
+              configMapKeyRef:
+                name: follower-certificate
+                key: ssl-certificate
+          - name: CONJUR_AUTHN_TOKEN_FILE
+            value: /run/conjur/access-token
+        ports:
+        - containerPort: 3000
+          name: http
+        volumeMounts:
+          - mountPath: /run/conjur
+            name: conjur-access-token
+            readOnly: true
+          - mountPath: /etc/summon
+            name: summon-config
+            readOnly: true
+        command: [ "summon", "-f", "/etc/summon/secrets.yaml", "ruby", "/usr/src/cityapp.rb", "-o", "0.0.0.0" ]
+      initContainers:  # comment this line to troubleshoot authenticator container
+      - image:  cyberark/conjur-authn-k8s-client
+        imagePullPolicy: IfNotPresent
+        name: authenticator
+        env:
+          - name: CONTAINER_MODE
+            value: init
+          - name: MY_POD_NAME
+            valueFrom:
+              fieldRef:
+                fieldPath: metadata.name
+          - name: MY_POD_NAMESPACE
+            valueFrom:
+              fieldRef:
+                fieldPath: metadata.namespace
+          - name: MY_POD_IP
+            valueFrom:
+              fieldRef:
+                fieldPath: status.podIP
+          - name: CONJUR_APPLIANCE_URL
+            value: "https://follower.dap.svc.cluster.local/api"
+          - name: CONJUR_AUTHN_URL
+            value: "https://follower.dap.svc.cluster.local/api/authn-k8s/okd"
+          - name: CONJUR_ACCOUNT
+            value: "cyberark"
+          - name: CONJUR_AUTHN_LOGIN
+            value: "host/conjur/authn-k8s/okd/apps/cityapp/service_account/cityapp-summon-init"
+          - name: CONJUR_SSL_CERTIFICATE
+            valueFrom:
+              configMapKeyRef:
+                name: follower-certificate
+                key: ssl-certificate
+        volumeMounts:
+          - mountPath: /run/conjur
+            name: conjur-access-token
+      volumes:
+        - name: conjur-access-token
+          emptyDir:
+            medium: Memory
+        - name: summon-config
+          configMap:
+            name: cityapp-summon-init-config
+#### This is not required if using openshift integrated registry
+#      imagePullSecrets:
+#       - name: dockerpullsecret
