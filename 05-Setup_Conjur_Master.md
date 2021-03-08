@@ -52,17 +52,22 @@ Install CyberArk Conjur Master in Jump Host
    ```
 
 3.	Let's configure the DAP master instance and import the cert
+   
+   - Access the Conjur Shell
    ```bash
    sudo docker exec -it conjur-appliance bash
+   ```
+   - Setup the Conjur Master
+      - Remark: Your Conjur Master is Internet faceing, please use a complex password for the Conjur Master: <your design password>
+   ```bash
    evoke configure master --accept-eula -h master-dap.cyberarkdemo.com --master-altnames "master-dap.cyberarkdemo.com" -p <your design password> cyberark
-   *** Remark: Your Conjur Master is Internet faceing, please use a complex password for the Conjur Master: <your design password>
    cd /tmp
    tar -zxvf dap-certificate.tgz
    evoke ca import --root /tmp/dc1-ca.cer.pem
    evoke ca import --key follower-dap.key.pem follower-dap.cer.pem
    evoke ca import --key master-dap.key.pem --set master-dap.cer.pem
    ```
-   *** Remark: Make sure all step output without any error
+   - Remark: Make sure all step output without any error
 
 4. Clean up the cert file and exit back to Jump Host Shell
    ```bash
