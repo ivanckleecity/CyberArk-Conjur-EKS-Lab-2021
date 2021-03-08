@@ -35,7 +35,6 @@ cd ~/cityapp/cityapp_summon_init
 wget https://github.com/ivanckleecity/CyberArk-DAP-EKS-Lap-2021/raw/main/Task07/secrets.yaml
 kubectl create configmap cityapp-summon-init-config --from-file=secrets.yaml -n cityapp
 ```
-- the secrets.yaml are mentioned in step 1 
 
 ### 5.0 Deploy the Cityapp Summon to your EKS Cluster
 1. Download and review and make necessary changes to cityapp-summon-init.yaml deployment file
