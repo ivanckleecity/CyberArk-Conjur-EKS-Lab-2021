@@ -48,3 +48,5 @@ For more detail about CyberArk Conjur Secrets Manager, please visit the two webs
 ### [Task 7: Deploy App to EKS Cluster with CyberArk Summon Secrets Injection](07-Deploy_App_with_Summon_Secrets_Injects.md)
 
 ### [Task 8: Deploy App to EKS Cluster with CyberArk Secretless Broker](08-Deploy_App_with_Cyberark_Secretless_Broker.md)
+
+### [Task 8: Deploy App to EKS Cluster with CyberArk Secretless Broker](Task09/readme.md)
