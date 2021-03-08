@@ -1,7 +1,10 @@
 # Objectives
 Install CyberArk Conjur Master in Jump Host
 
-### 1.0. Collect the Conjur Installer and seed fectcher from your local CyberArk Sales Engineer Team
+### 1.0. Please contact your local CyberArk Sales or Sales Engineer Team to request the Conjur Installers and Images
+:bulb: :bangbang: Reminder: You have legal responsibly to keep the CyberArk Conjur Image/Installer for your own use only, PLEASE MAKE SURE that DO NOT share CyberArk Conjur Installers/Images to any other person or organization to avoid unexpected illegal distribution of Conjur images :bangbang: :bulb:
+
+You need below two Conjur images or AIM to complete the lab setup
 1. conjur-appliance_xx.x.x.tar.gz
 2. dap-seedfetcher_x.x.x.tar.gz (Remark: the xx.x.x is the Conjur version)
 - This lab guide is based on Conjur 12.0 version
