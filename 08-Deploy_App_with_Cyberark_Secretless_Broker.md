@@ -1,26 +1,24 @@
 # Objectives
-We are going to deploy secure applications with Secretless Broker. For you to better understand how CyberArk Secretless Broker, plesae take 15 mins to read [Secretless Broker online doc](https://secretless.io/) before you start this lab session
+We are going to deploy secure applications with CyberArk Secretless Broker. For you better understand how CyberArk Secretless Broker, plesae take 15 mins to read [Secretless Broker online doc](https://secretless.io/) before you start this lab session
 
-### 1.0. Collect those yaml files
-- cityapp-secretless.yaml
-- secretless.yaml
+### 1.0 These should have been done in the previous lab steps. Make sure all are in place. 
+- Follower certificate is applied in configmap
+- Conjur policy are applied
+- EKS cluster rolebinding are applied to allow follower to validate Pods in cityapp namespace
 
-### 1.0 These should have been done in the previous lab. Make sure all are in place. 
-- Follower certificate in configmap
-- Conjur policy for cityapp-secretless
-- EKS clusterrolebinding to allow follower to validate Pods in cityapp namespace
-
-### 3.0 Review and make necessary changes Secretless configuration file `secretless.yaml` and load it as a new configmap
-1. Create folder /home/ec2-user/cityapp/cityapp_secretless
-2. Copy cityapp-secretless.yaml and secretless.yaml to /home/ec2-user/cityapp/cityapp_secretless
+### 2.0 Review and make necessary changes Secretless configuration file `secretless.yaml` and load it as a new configmap
+1. Download cityapp_secretless.yaml
 ```
-cd /home/ec2-user/cityapp/cityapp_secretless
+mkdir -p ~/cityapp/cityapp_secretless
+cd ~/cityapp/cityapp_secretless
+wget https://github.com/ivanckleecity/CyberArk-DAP-EKS-Lap-2021/raw/main/Task08/secretless.yaml
 kubectl create configmap cityapp-secretless-config --from-file=secretless.yaml -n cityapp
 ```
 
-### 4.0 Review cityapp-secretless.yaml deployment file and modify it with proper value for your environment. 
+### 4.0 Download cityapp-secretless.yaml deployment file and apply it. Please review the yaml files and make necessary changes if your envirunment is difference to this lab.
 ```
-cd /home/ec2-user/cityapp/cityapp_secretless
+cd ~/cityapp/cityapp_secretless
+wget https://github.com/ivanckleecity/CyberArk-DAP-EKS-Lap-2021/raw/main/Task08/cityapp-secretless.yaml
 kubectl apply -f cityapp-secretless.yaml -n cityapp
 ```
 
@@ -51,4 +49,3 @@ bash-4.4# curl http://127.0.0.1:3000
 <small>Connected to database world on 127.0.0.1:3306 using username:  and password: </small>
 bash-4.4#
 ```
-
