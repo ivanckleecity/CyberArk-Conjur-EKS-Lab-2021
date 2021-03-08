@@ -1,5 +1,5 @@
 # Objectives
-We are going to deploy secure applications with Secretless Broker.
+We are going to deploy secure applications with Secretless Broker. For you to better understand how CyberArk Secretless Broker, plesae take 15 mins to read [Secretless Broker online doc](https://secretless.io/) before you start this lab session
 
 ### 1.0. Collect those yaml files
 - cityapp-secretless.yaml
