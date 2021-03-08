@@ -24,6 +24,7 @@ conjur variable values add cust_portal/password Cyberark1
 ```bash
 mkdir -p ~/cityapp/cityapp_summon_init
 cd ~/cityapp/cityapp_summon_init
+kubectl get pod -n dap
 kubectl exec -it follower-<pod ID> -n dap cat /opt/conjur/etc/ssl/conjur.pem > follower-certificate.pem
 kubectl create configmap follower-certificate --from-file=ssl-certificate=<(cat follower-certificate.pem) -n cityapp
 ```
