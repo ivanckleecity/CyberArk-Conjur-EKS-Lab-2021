@@ -1,13 +1,6 @@
 # Objectives
 We are going to deploy secure applications with summon injects secrets into environment variables. We will now redeploy cityapp from Task 4 without hardcode credential by using summon to retrieve secrets from Conjur and inject to environment variable. To use summon to inject secret for container, the summon binary has to be included in application image.  The cityapp is already built with summon. You may review the Dockerfile for more detail
 
-### 1.0. Collect those yaml files
-- projects-authn.yaml
-- app-identity.yaml
-- safe-permission.yaml
-- secrets.yaml
-- follower-dap.cer.pem
-
 ### 1.0 Start with oad these policy files to permit application namespace to authenticate and fetch secrets.
 1. Download projects-authn.yaml, app-identity.yaml and safe-permission.yaml to /home/ec2-user/conjur_policy
 ```bash
