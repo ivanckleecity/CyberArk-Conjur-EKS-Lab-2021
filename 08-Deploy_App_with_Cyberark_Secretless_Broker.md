@@ -5,7 +5,7 @@ We are going to deploy secure applications with Secretless Broker.
 - cityapp-secretless.yaml
 - secretless.yaml
 
-### 2.0 These should have been done in the previous lab. Make sure all are in place. 
+### 1.0 These should have been done in the previous lab. Make sure all are in place. 
 - Follower certificate in configmap
 - Conjur policy for cityapp-secretless
 - EKS clusterrolebinding to allow follower to validate Pods in cityapp namespace
