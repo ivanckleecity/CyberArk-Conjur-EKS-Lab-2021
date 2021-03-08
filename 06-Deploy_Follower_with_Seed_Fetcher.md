@@ -147,8 +147,7 @@ kubectl create configmap master-certificate --from-file=ssl-certificate=<(cat ma
 cd ~/conjur_follower
 wget https://github.com/ivanckleecity/CyberArk-DAP-EKS-Lap-2021/raw/main/Task06/follower-dap-with-seedfetcher.yaml
 ```
-4. Use kubectl command to apply.
+2. Use kubectl command to apply.
 ```bash
-cd /home/ec2-user/conjur_policy
 kubectl apply -f ./follower-dap-with-seedfetcher.yaml -n dap
 ```
