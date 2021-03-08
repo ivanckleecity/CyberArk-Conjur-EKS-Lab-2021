@@ -26,8 +26,8 @@ For more detail about CyberArk Conjur Secrets Manager, please visit the two webs
 ![Architecture](https://github.com/ivanckleecity/CyberArk-DAP-EKS-Lap-2021/blob/main/images/architecture_eks.JPG)
 
 ## Lab Guide
-- Task 0 to 1 is to create AWS envirunment to run the Jump Host and Setup the Jump Host
-- Task 2 to 4 is to create an EKS envirunment to run a contrainer App to access a External Database. The External Database will be seating in your Jump Host
+- Task 0 to 1 is to create AWS envirunment to run the Jump Host
+- Task 2 to 4 is to create an EKS envirunment to run contrainer application to access an external Database. The External Database will be seating in your Jump Host
 - Task 5 to 8 is to setup CyberArk Conjur Secrets Manager to protect containerized applications and DevOps tools secure access to resources. The lab will show case how to setup and use CyberArk Summon and Secretless Broker 
 
 
