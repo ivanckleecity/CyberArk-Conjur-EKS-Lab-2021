@@ -110,6 +110,7 @@ Install CyberArk Conjur Master in Jump Host
    ```
    cd ~
    mkdir -p ~/conjur_policy
+   cd ~/conjur_policy
    wget https://github.com/ivanckleecity/CyberArk-DAP-EKS-Lap-2021/raw/main/Task05/root.yaml
    conjur authn login -u admin
    conjur policy load root /root/conjur_policy/root.yaml
