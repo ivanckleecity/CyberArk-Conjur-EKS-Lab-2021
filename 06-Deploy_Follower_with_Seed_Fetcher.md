@@ -151,3 +151,15 @@ wget https://github.com/ivanckleecity/CyberArk-DAP-EKS-Lap-2021/raw/main/Task06/
 ```bash
 kubectl apply -f ./follower-dap-with-seedfetcher.yaml -n dap
 ```
+
+### 12.0 Check if your follow running correctly
+1. Check if your follower pod status is showing "Running"
+```bash
+kubectl get pod -n dap
+```
+2. Sample Output
+```
+[ec2-user@ip-10-0-1-54 conjur_follower]$ kubectl get pod -n dap
+NAME                        READY   STATUS    RESTARTS   AGE
+follower-7f67ddf796-r8m2z   1/1     Running   0          6m21s
+```
