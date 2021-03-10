@@ -40,7 +40,7 @@ spec:
     spec:
       serviceAccountName: cityapp-summon-init
       containers:
-      - image: 409556437035.dkr.ecr.ap-southeast-1.amazonaws.com/ivanlee/cityapp:1.0
+      - image: <your image in AWS ECR>
         imagePullPolicy: IfNotPresent
         name: cityapp
         env:
