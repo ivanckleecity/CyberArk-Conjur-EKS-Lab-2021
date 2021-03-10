@@ -16,9 +16,13 @@ kubectl create configmap cityapp-secretless-config --from-file=secretless.yaml -
 ```
 
 ### 4.0 Download cityapp-secretless.yaml deployment file and apply it. Please review the yaml files and make necessary changes if your envirunment is difference to this lab.
-```
+- Download cityapp-secretless.yaml 
+```bash
 cd ~/cityapp/cityapp_secretless
 wget https://github.com/ivanckleecity/CyberArk-DAP-EKS-Lap-2021/raw/main/Task08/cityapp-secretless.yaml
+```
+- Update the "your image in AWS ECR" in your cityapp-secretless.yaml before apply it
+```bash
 kubectl apply -f cityapp-secretless.yaml -n cityapp
 ```
 
