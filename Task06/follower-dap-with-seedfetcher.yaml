@@ -43,7 +43,7 @@ spec:
       initContainers:
 #      Containers:
       - name: authenticator
-        image: 409556437035.dkr.ecr.ap-southeast-1.amazonaws.com/ivanlee/dap-seedfetcher:0.1.5
+        image: <your image in AWS ECR>
         imagePullPolicy: Always
         env:
           - name: CONJUR_SEED_FILE_URL
@@ -86,7 +86,7 @@ spec:
       containers:
       - name: dap-appliance
         command: ["/tmp/seedfile/start-follower.sh"]
-        image: 409556437035.dkr.ecr.ap-southeast-1.amazonaws.com/ivanlee/conjur-appliance:12.0.0
+        image: <your image in AWS ECR>
         imagePullPolicy: IfNotPresent
         env:
           - name: CONJUR_AUTHENTICATORS
