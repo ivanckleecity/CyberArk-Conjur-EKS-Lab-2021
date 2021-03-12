@@ -43,7 +43,7 @@ cd ~/cityapp/cityapp_summon_init
 wget https://github.com/ivanckleecity/CyberArk-DAP-EKS-Lap-2021/raw/main/Task07/cityapp-summon-init.yaml
 ```
 3. Apply this to deploy cityapp-summon-init Observe how summon is triggered in command overrides. 
-- Update the "your image in AWS ECR" in your cityapp-summon-init.yaml before apply it
+- Update the "your image in AWS ECR" in your cityapp-summon-init.yaml before apply it. Additional reminder that your image version should be a version number instead of latest. The correct example, <your ECS>/xyz/<your cityapp>:0.1.5
 ```bash
 kubectl apply -f cityapp-summon-init.yaml -n cityapp
 ```
