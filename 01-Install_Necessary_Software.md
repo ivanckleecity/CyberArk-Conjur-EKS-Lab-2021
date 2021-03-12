@@ -26,12 +26,14 @@ sudo yum install gcc
 
 3.1. Install Homebrew
 ```bash
+mkdir -p ~/.linuxbrew/bin
 git clone https://github.com/Homebrew/brew ~/.linuxbrew/Homebrew
-mkdir ~/.linuxbrew/bin
+cd  ~/.linuxbrew/bin 
 ln -s ../Homebrew/bin/brew ~/.linuxbrew/bin
 eval $(~/.linuxbrew/bin/brew shellenv)
 brew tap weaveworks/tap
 ```
+
 3.2. Install eksctl
 ```bash
 brew install weaveworks/tap/eksctl
