@@ -24,10 +24,10 @@ Deploy Conjur Follower to your EKS Cluster Node. We will deploy Conjur followers
    ```
    sudo docker tag registry.tld/conjur-appliance:12.0.0 <your aws ecr account><your name>/conjur-appliance:12.0.0
    sudo docker tag cyberark/dap-seedfetcher:0.1.5 <your aws ecr account><your name>Don/dap-seedfetcher:0.1.5
-   sudo docker push <your aws ecr account><your name>/conjur-appliance:12.0.0
-   sudo docker push <your aws ecr account><your name>/dap-seedfetcher:0.1.5
+   sudo docker push <your aws ecr account>/<your name>/conjur-appliance:12.0.0
+   sudo docker push <your aws ecr account>/<your name>/dap-seedfetcher:0.1.5
    ```
-   ```
+   
 - Example:
    ```
    docker tag registry.tld/conjur-appliance:12.0.0 1234567890123.dkr.ecr.ap-southeast-1.amazonaws.com/ivanlee/conjur-appliance:12.0.0
