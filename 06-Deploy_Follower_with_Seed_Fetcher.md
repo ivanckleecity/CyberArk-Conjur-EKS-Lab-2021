@@ -149,7 +149,7 @@ kubectl create configmap master-certificate --from-file=ssl-certificate=<(cat ma
 cd ~/conjur_follower
 wget https://github.com/ivanckleecity/CyberArk-DAP-EKS-Lap-2021/raw/main/Task06/follower-dap-with-seedfetcher.yaml
 ```
-2. Update the "your image in AWS ECR" in your follower-dap-with-seedfetcher.yaml before apply it
+2. Update the "your image in AWS ECR" in your follower-dap-with-seedfetcher.yaml before apply it. Additional reminder that your image version should be a version number instead of latest. The correct example, <your ECS>/xyz/dap-seedfetcher:0.1.5
 3. Use kubectl command to apply.
 ```bash
 kubectl apply -f ./follower-dap-with-seedfetcher.yaml -n dap
